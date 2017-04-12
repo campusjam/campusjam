@@ -1,0 +1,144 @@
+<template name="Create_Event_Page">
+  <div style="margin-top: 20px;" class="ui container">
+    <form class="ui form">
+      <h4 class="ui dividing header">Create New Event</h4>
+      <div class="field">
+        <label>Created By</label>
+        <input type="text" name="name" placeholder="Name">
+      </div>
+      <div class="field">
+        <label>Place</label>
+        <input type="text" name="place" placeholder="Where?">
+      </div>
+
+      <div class="field">
+        <div class="two fields">
+          <div class="field">
+            <label>Musical Taste</label>
+            <select name="taste" multiple="" class="ui fluid search dropdown">
+              <option value="">Event Theme</option>
+              <option value="classical">Classical</option>
+              <option value="rock">Rock</option>
+              <option value="jazz">Jazz</option>
+              <option value="rb">R&B</option>
+              <option value="folk">Folk</option>
+              <option value="blue">Blues</option>
+              <option value="country">Country</option>
+              <option value="rap">Rap</option>
+              <option value="heavymetal">Heavy Metal</option>
+              <option value="hiphop">Hip Hop</option>
+              <option value="opera">Opera</option>
+              <option value="soul">Soul</option>
+              <option value="pop">Pop</option>
+              <option value="funk">Funk</option>
+              <option value="electronic">Electronic</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Capabilities</label>
+            <select multiple="" name="capabilities" class="ui fluid search dropdown">
+              <option value="">Capabilities Required</option>
+              <option value="piano">Piano</option>
+              <option value="trumpet">Trumpet</option>
+              <option value="drums">Drums</option>
+              <option value="guitar">Guitar</option>
+              <option value="violin">Violin</option>
+              <option value="horn">Horn</option>
+              <option value="saxophone">Saxophone</option>
+              <option value="flute">Flute</option>
+              <option value="tronbone">Tronbone</option>
+              <option value="bass">Bass</option>
+              <option value="chimes">Chimes</option>
+              <option value="oboe">Oboe</option>
+              <option value="tronbone">Tronbone</option>
+              <option value="triangle">Triangle</option>
+              <option value="Cymbal">Cymbal</option>
+              <option value="tuba">Tuba</option>
+              <option value="accordion">Accordion</option>
+              <option value="clarinet">Clarinet</option>
+              <option value="maracas">Maracas</option>
+              <option value="other">Other</option>
+              <option value="none">None</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="field">
+        <div class="two fields">
+          <div class="field">
+            <label>Start Time</label>
+            <select class="ui fluid search dropdown" name="start">
+              <option value="">Select a Start Time</option>
+              <option value="1">1:00AM</option>
+              <option value="2">2:00AM</option>
+              <option value="3">3:00AM</option>
+              <option value="4">4:00AM</option>
+              <option value="5">5:00AM</option>
+              <option value="6">6:00AM</option>
+              <option value="7">7:00AM</option>
+              <option value="8">8:00AM</option>
+              <option value="9">9:00AM</option>
+              <option value="10">10:00AM</option>
+              <option value="11">11:00AM</option>
+              <option value="12">12:00PM</option>
+              <option value="13">1:00PM</option>
+              <option value="14">2:00PM</option>
+              <option value="15">3:00PM</option>
+              <option value="16">4:00PM</option>
+              <option value="17">5:00PM</option>
+              <option value="18">6:00PM</option>
+              <option value="19">7:00PM</option>
+              <option value="20">8:00PM</option>
+              <option value="21">9:00PM</option>
+              <option value="22">10:00PM</option>
+              <option value="23">11:00PM</option>
+              <option value="24">12:00AM</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>End Time</label>
+            <select class="ui fluid search dropdown" name="end">
+              <option value="">Select an End Time</option>
+              <option value="1">1:00AM</option>
+              <option value="2">2:00AM</option>
+              <option value="3">3:00AM</option>
+              <option value="4">4:00AM</option>
+              <option value="5">5:00AM</option>
+              <option value="6">6:00AM</option>
+              <option value="7">7:00AM</option>
+              <option value="8">8:00AM</option>
+              <option value="9">9:00AM</option>
+              <option value="10">10:00AM</option>
+              <option value="11">11:00AM</option>
+              <option value="12">12:00PM</option>
+              <option value="13">1:00PM</option>
+              <option value="14">2:00PM</option>
+              <option value="15">3:00PM</option>
+              <option value="16">4:00PM</option>
+              <option value="17">5:00PM</option>
+              <option value="18">6:00PM</option>
+              <option value="19">7:00PM</option>
+              <option value="20">8:00PM</option>
+              <option value="21">9:00PM</option>
+              <option value="22">10:00PM</option>
+              <option value="23">11:00PM</option>
+              <option value="24">12:00AM</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="field">
+        <label>Event Description</label>
+        <textarea rows="5" name="Description" id="des" placeholder="Description of the event"></textarea>
+      </div>
+      <button class="ui button" type="submit">Submit</button>
+    </form>
+  </div>
+
+  <script>
+    $('.ui.dropdown')
+        .dropdown()
+    ;
+  </script>
+</template>
