@@ -1,0 +1,29 @@
+<template name="Browse_Page">
+    <div class="ui landing container">
+      <div class="ui borderless center aligned segment">
+        <h1 style="padding-bottom: 30px">Browse profiles of similar interests and abilities.</h1>
+
+        <div class="ui left icon action input">
+          <i class="search icon"></i>
+          <input type="text" placeholder="Enter keyword(s)">
+          <div class="ui search button">Search</div>
+        </div>
+
+        <form style="padding: 30px 250px" class="ui form">
+          <div class="field">
+            {{> Select_Form_Control label="Musical Tastes" options=tastes errorMessage=(fieldError "tastes") multiple=true }}
+          </div>
+
+          <div class="field">
+            {{> Select_Form_Control label="Musical Capabilites" options=capabilites errorMessage=(fieldError "capabilites") multiple=true }}
+          </div>
+
+          <div class="field">
+            {{> Select_Form_Control label="Musical Goals" options=goals errorMessage=(fieldError "goals") multiple=true }}
+          </div>
+
+          <button class="ui start button">Search</button>
+        </form>
+      </div>
+  </div>
+</template>
