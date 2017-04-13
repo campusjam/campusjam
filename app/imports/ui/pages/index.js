@@ -15,3 +15,5 @@ import './list-stuff-page.js';
 import './my-profile-page.html';
 
 import './create-event-page.html';
+
+import './browse-page.html';
