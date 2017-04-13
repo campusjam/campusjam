@@ -15,6 +15,13 @@ FlowRouter.route('/', {
   },
 });
 
+FlowRouter.route('/browse', {
+  name: 'Browse_Page',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'Browse_Page' });
+  },
+});
+
 FlowRouter.route('/list', {
   name: 'List_Stuff_Page',
   action() {
