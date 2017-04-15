@@ -3,6 +3,7 @@
  */
 import { Template } from 'meteor/templating';
 import { Meteor } from 'meteor/meteor';
+import { FlowRouter } from 'meteor/kadira:flow-router';
 
 Template.Cas_Login.events({
   /**
@@ -13,6 +14,7 @@ Template.Cas_Login.events({
   'click .cas-logout': function casLogout(event) {
     event.preventDefault();
     Meteor.logout();
+    FlowRouter.go('Landing_Page');
     return false;
   },
 
@@ -28,7 +30,9 @@ Template.Cas_Login.events({
         console.log(error);
       }
     };
-    Meteor.loginWithCas(callback);
+    if (Meteor.loginWithCas(callback)) {
+      FlowRouter.go('Home_Page');
+    }
     return false;
   },
 });
