@@ -14,4 +14,10 @@ Template.Header.helpers({
   user: function user() {
     return Meteor.user() ? Meteor.user().profile.name : 'No logged in user';
   },
+  /**
+   * @returns {boolean} True if there is a logged in user.
+   */
+  canShow: function canShow() {
+    return !!Meteor.user();
+  },
 });
