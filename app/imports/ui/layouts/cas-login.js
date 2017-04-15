@@ -28,11 +28,11 @@ Template.Cas_Login.events({
     const callback = function loginCallback(error) {
       if (error) {
         console.log(error);
+      } else {
+        FlowRouter.go('Home_Page');
       }
     };
-    if (Meteor.loginWithCas(callback)) {
-      FlowRouter.go('Home_Page');
-    }
+    Meteor.loginWithCas(callback);
     return false;
   },
 });
