@@ -1,13 +1,18 @@
 <template name="Header">
-  <img style="max-height: 200px" class="ui fluid image" src="/images/banner.jpg">
-  <div style="margin: 0px 0px -6px 0px; border-radius: 0px" class="ui borderless inverted menu">
-    <div class="ui container">
-      <a href="{{pathFor 'Landing_Page'}}"></a>
-      <a class="item" href="{{pathFor 'Home_Page'}}"><h1>Home</h1></a>
-      <a class="{{ isActiveRoute 'My_Profile_Page'}} item" href="{{ pathFor 'My_Profile_Page' }}">My Profile</a>
-      <a class="{{ isActiveRoute 'Browse_Page'}} item" href="{{ pathFor 'Browse_Page' }}">Browse Users</a>
-      <a class="{{ isActiveRoute 'Create_Event_Page'}} item" href="{{ pathFor 'Create_Event_Page' }}">Events</a>
-      <a class="{{ isActiveRoute 'Login_Page'}} right item" href="{{ pathFor 'Login_Page' }}">Login</a>
+  {{#if canShow}}
+    <img style="max-height: 200px" class="ui fluid image" src="/images/banner.jpg">
+    <div style="margin-top: 0; border-radius: 0px" class="ui borderless inverted menu">
+      <div class="ui container">
+        <a class="item" href="{{pathFor 'Home_Page'}}"><h1>Home</h1></a>
+        <a class="{{ isActiveRoute 'My_Profile_Page'}} item" href="{{ pathFor 'My_Profile_Page' }}">My Profile</a>
+        <a class="{{ isActiveRoute 'Browse_Page'}} item" href="{{ pathFor 'Browse_Page' }}">Browse Users</a>
+        <a class="{{ isActiveRoute 'Create_Event_Page'}} item" href="{{ pathFor 'Create_Event_Page' }}">Events</a>
+        <a href="#" class="right item">{{> Cas_Login }}</a>
+      </div>
     </div>
-  </div>
+  {{else}}
+    <div style="border-radius: 0px" class="ui borderless inverted menu">
+      <a href="#" class="right item">{{> Cas_Login }}</a>
+    </div>
+  {{/if}}
 </template>
