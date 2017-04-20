@@ -1,5 +1,5 @@
 import { Accounts } from 'meteor/accounts-base';
-import { Profiles } from '/imports/api/profile/ProfileCollection';
+import { Profiles } from '/imports/api/profiles/ProfilesCollection';
 
 /* eslint-disable no-console */
 

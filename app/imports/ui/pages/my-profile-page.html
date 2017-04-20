@@ -3,83 +3,80 @@
     <div class="ui container">
       <div class="ui form" style="padding: 20px 50px 20px 50px">
         <h1 class="ui dividing header" style="margin-bottom: 30px">My Profile</h1>
-        <div class="two fields">
-          <div class="field">
-            <label>First</label>
-            <input type="text" placeholder="John">
-          </div>
-          <div class="field">
-            <label>Last</label>
-            <input type="text" placeholder="Doe">
-          </div>
-        </div>
 
-        <div class="field">
-          <label>Address</label>
-          <input type="text" placeholder="2500 Campus Rd. Honolulu, HI 96822">
-        </div>
-
-        <div class="two fields">
-          <div class="field">
-            <label>Telephone</label>
-            <input type="text" placeholder="XXX-XXX-XXXX">
-          </div>
-          <div class="field">
-            <label>Email</label>
-            <input type="text" placeholder="johndoe@hawaii.edu">
-          </div>
-        </div>
-
-        <div class="ui sub header">Musical Tastes</div>
-        <select multiple="" name="music" class="ui fluid normal dropdown">
-          <option value="">Tastes</option>
-          <option value="jazz">Jazz</option>
-          <option value="classical">Classical</option>
-          <option value="randb">R&B</option>
-          <option value="rock">Rock</option>
-          <option value="other">Other</option>
-        </select>
-
-        <div class="ui sub header">Musical Capabilities</div>
-        <select multiple="" name="capabilities" class="ui fluid normal dropdown">
-          <option value="">Capabilities</option>
-          <option value="piano">Piano</option>
-          <option value="trumpet">Trumpet</option>
-          <option value="drums">Drums</option>
-          <option value="guitar">Guitar</option>
-          <option value="other">Other</option>
-        </select>
-
-        <div class="ui sub header">Musical Goals</div>
-        <select multiple="" name="goals" class="ui fluid normal dropdown">
-          <option value="">Goals</option>
-          <option value="band">Play in a band</option>
-          <option value="casual">Casual playing</option>
-          <option value="learn">Learn to play an instrument</option>
-          <option value="band">Play in a band</option>
-          <option value="other">Other</option>
-        </select>
-
-        <div class="two fields" style="padding-top: 20px">
-          <div class="field">
-            <label>YouTube</label>
-            <div class="ui left icon input">
-              <input type="text" placeholder="YouTube URL or N/A if none">
-              <i class="youtube icon"></i>
+        <form class="ui equal width form profile-data-form {{ successClass }} {{ errorClass }}">
+          <div class="fields">
+            <div class="field">
+              {{> Text_Form_Control label="First" placeholder="Philip" value=profile.firstName errorMessage=(fieldError "firstName")}}
+            </div>
+            <div class="field">
+              {{> Text_Form_Control label="Last" placeholder="Johnson" value=profile.lastName errorMessage=(fieldError "lastName")}}
             </div>
           </div>
 
           <div class="field">
-            <label>SoundCloud</label>
-            <div class="ui left icon input">
-              <input type="text" placeholder="SoundCloud URL or N/A if none">
-              <i class="soundcloud icon"></i>
+            {{> Text_Form_Control label="Address" placeholder="2500 Campus Rd. Honolulu, HI 96822" value=profile.address errorMessage=(fieldError "address")}}
+          </div>
+
+
+          <div class="field">
+            <div class="two fields">
+              {{> Text_Form_Control label="Telephone" required=true value=(contactDataField 'telephone') errorMessage="Phone number must be a 10 digit number with dashes."}}
+              {{> Text_Form_Control label="Email" required=true value=(contactDataField 'email') errorMessage=(fieldError "email")}}
             </div>
           </div>
-        </div>
 
-        <button class="ui button" style="margin-top: 20px" type="submit">Update</button>
+          <div class="ui sub header">Musical Tastes</div>
+          <select multiple="" name="music" class="ui fluid normal dropdown">
+            <option value="">Tastes</option>
+            <option value="jazz">Jazz</option>
+            <option value="classical">Classical</option>
+            <option value="randb">R&B</option>
+            <option value="rock">Rock</option>
+            <option value="other">Other</option>
+          </select>
 
+          <div class="ui sub header">Musical Capabilities</div>
+          <select multiple="" name="capabilities" class="ui fluid normal dropdown">
+            <option value="">Capabilities</option>
+            <option value="piano">Piano</option>
+            <option value="trumpet">Trumpet</option>
+            <option value="drums">Drums</option>
+            <option value="guitar">Guitar</option>
+            <option value="other">Other</option>
+          </select>
+
+          <div class="ui sub header">Musical Goals</div>
+          <select multiple="" name="goals" class="ui fluid normal dropdown">
+            <option value="">Goals</option>
+            <option value="band">Play in a band</option>
+            <option value="casual">Casual playing</option>
+            <option value="learn">Learn to play an instrument</option>
+            <option value="band">Play in a band</option>
+            <option value="other">Other</option>
+          </select>
+
+          <div class="two fields" style="padding-top: 20px">
+            <div class="field">
+              <label>YouTube</label>
+              <div class="ui left icon input">
+                <input type="text" placeholder="YouTube URL or N/A if none">
+                <i class="youtube icon"></i>
+              </div>
+            </div>
+
+            <div class="field">
+              <label>SoundCloud</label>
+              <div class="ui left icon input">
+                <input type="text" placeholder="SoundCloud URL or N/A if none">
+                <i class="soundcloud icon"></i>
+              </div>
+            </div>
+          </div>
+
+          <button class="ui button" style="margin-top: 20px" type="submit">Update</button>
+
+        </form>
       </div>
     </div>
   {{/If_Logged_In}}

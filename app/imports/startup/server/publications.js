@@ -4,7 +4,7 @@
  */
 
 // import { Interests } from '/imports/api/interests/InterestCollection';
-import { Profiles } from '/imports/api/profiles/ProfileCollection';
+import { Profiles } from '/imports/api/profiles/ProfilesCollection';
 
 // Interests.publish();
 Profiles.publish();
