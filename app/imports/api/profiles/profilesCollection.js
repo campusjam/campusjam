@@ -59,7 +59,7 @@ class ProfileCollection extends BaseCollection {
    */
   define({ firstName = '', lastName = '', address = '', telephone = '', email = '', musicaltastes = '', musicalcapabilities ='', musicalgoals= '', picture = '', youtube = '', soundcloud = '' }) {
     // make sure required fields are OK.
-    const checkPattern = { firstName: String, lastName: String, address: String, telephone: String, email = String, musicaltastes = String, musicalcapabilities = String, musicalgoals = String, picture: String, youtube: String, soundcloud = String };
+    const checkPattern = { firstName: String, lastName: String, address: String, telephone: String, email : String, musicaltastes : String, musicalcapabilities : String, musicalgoals : String, picture: String, youtube: String, soundcloud: String };
     check({ firstName, lastName, address, telephone, email, musicaltastes, musicalcapabilities, musicalgoals, picture, youtube, soundcloud }, checkPattern);
 
     if (this.find({ username }).count() > 0) {
