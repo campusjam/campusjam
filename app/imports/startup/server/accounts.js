@@ -1,8 +1,16 @@
-import { Meteor } from 'meteor/meteor';
 import { Accounts } from 'meteor/accounts-base';
+import { Profiles } from '/imports/api/profile/ProfileCollection';
 
-/* Validate username, sending a specific error message on failure. */
+/* eslint-disable no-console */
 
-if (!Meteor.settings.cas) {
-  console.log('CAS settings not found! Hint: "meteor --settings ../config/settings.development.json"');
-}
+/* Create a profile document for this user if none exists already. */
+Accounts.validateNewUser(function validate(user) {
+  if (user) {
+    const username = user.services.cas.id;
+    if (!Profiles.isDefined(username)) {
+      Profiles.define({ username });
+    }
+  }
+  // All UH users are valid for Campusjam.
+  return true;
+});
