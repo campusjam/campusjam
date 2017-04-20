@@ -13,5 +13,6 @@ import './list-stuff-page.html';
 import './list-stuff-page.js';
 
 import './my-profile-page.html';
+import './my-profile-page.js';
 
 import './create-event-page.html';
