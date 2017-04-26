@@ -1,15 +1,15 @@
 <template name="Create_Event_Page">
   <div style="margin-top: 20px;" class="ui container">
-    <form class="ui form">
+    <form class="ui form event-data-form {{ errorClass }}">
       <h2 class="ui dividing header">Create New Event</h2>
       <h3 class="ui dividing header">Basic Information</h3>
       <div class="field">
         <div class ="two fields">
           <div class="field">
-            {{> Text_Form_Control label="Event Name" placeholder="Philip" errorMessage=(fieldError "eventName")}}
+            {{> Text_Form_Control label="EventName" placeholder="Philip" errorMessage=(fieldError "eventName")}}
           </div>
           <div class="field">
-            {{> Text_Form_Control label="Created By" placeholder="Philip" errorMessage=(fieldError "name")}}
+            {{> Text_Form_Control label="CreateBy" placeholder="Philip" errorMessage=(fieldError "name")}}
           </div>
         </div>
       </div>
@@ -21,73 +21,29 @@
       <div class="field">
         <div class="two fields">
           <div class="field">
-            {{> Select_Form_Control label="Start Time" errorMessage=(fieldError "interests") multiple=false }}
+            {{> Select_Form_Control label="StartTime" errorMessage=(fieldError "interests") multiple=false }}
           </div>
 
           <div class="field">
-            {{> Select_Form_Control label="End Time" errorMessage=(fieldError "interests") multiple=false }}
+            {{> Select_Form_Control label="EndTime" errorMessage=(fieldError "interests") multiple=false }}
           </div>
         </div>
       </div>
-
 
       <h3 class="ui dividing header">Event Details</h3>
       <div class="field">
         <div class="two fields">
           <div class="field">
-            <label>Musical Taste</label>
-            <select name="taste" multiple="" class="ui fluid search dropdown">
-              <option value="">Event Theme</option>
-              <option value="classical">Classical</option>
-              <option value="rock">Rock</option>
-              <option value="jazz">Jazz</option>
-              <option value="rb">R&B</option>
-              <option value="folk">Folk</option>
-              <option value="blue">Blues</option>
-              <option value="country">Country</option>
-              <option value="rap">Rap</option>
-              <option value="heavymetal">Heavy Metal</option>
-              <option value="hiphop">Hip Hop</option>
-              <option value="opera">Opera</option>
-              <option value="soul">Soul</option>
-              <option value="pop">Pop</option>
-              <option value="funk">Funk</option>
-              <option value="electronic">Electronic</option>
-              <option value="other">Other</option>
-            </select>
+            {{> Select_Form_Control label="Tastes" options=tastes errorMessage=(fieldError "tastes") multiple=true }}
           </div>
           <div class="field">
-            <label>Capabilities</label>
-            <select multiple="" name="capabilities" class="ui fluid search dropdown">
-              <option value="">Capabilities Required</option>
-              <option value="piano">Piano</option>
-              <option value="trumpet">Trumpet</option>
-              <option value="drums">Drums</option>
-              <option value="guitar">Guitar</option>
-              <option value="violin">Violin</option>
-              <option value="horn">Horn</option>
-              <option value="saxophone">Saxophone</option>
-              <option value="flute">Flute</option>
-              <option value="tronbone">Tronbone</option>
-              <option value="bass">Bass</option>
-              <option value="chimes">Chimes</option>
-              <option value="oboe">Oboe</option>
-              <option value="tronbone">Tronbone</option>
-              <option value="triangle">Triangle</option>
-              <option value="Cymbal">Cymbal</option>
-              <option value="tuba">Tuba</option>
-              <option value="accordion">Accordion</option>
-              <option value="clarinet">Clarinet</option>
-              <option value="maracas">Maracas</option>
-              <option value="other">Other</option>
-              <option value="none">None</option>
-            </select>
+            {{> Select_Form_Control label="Capabilities" options=capabilities errorMessage=(fieldError "capabilities") multiple=true }}
           </div>
         </div>
       </div>
 
       <div class="field">
-        {{> TextArea_Form_Control label="Event Description" placeholder="Describe event in more details" errorMessage=(fieldError "description")}}
+        {{> TextArea_Form_Control label="Description" placeholder="Describe event in more details" errorMessage=(fieldError "description")}}
       </div>
       <button class="ui button" type="submit">Submit</button>
     </form>

@@ -2,7 +2,7 @@ import { SimpleSchema } from 'meteor/aldeed:simple-schema';
 import BaseCollection from '/imports/api/base/BaseCollection';
 // import { Interests } from '/imports/api/interest/InterestCollection';
 import { check } from 'meteor/check';
-import { Meteor } from 'meteor/meteor';
+
 
 /** @module Event */
 
@@ -22,6 +22,10 @@ class EventCollection extends BaseCollection {
       eventName: { type: String, optional: true },
       createBy: { type: String, optional: true },
       place: { type: String, optional: true },
+      start: { type: String, optional: true },
+      end: { type: String, optional: true },
+      tastes: { type: [String], optional: true },
+      capabilities: { type: [String], optional: true },
       description: { type: String, optional: true },
     }));
   }
@@ -47,19 +51,17 @@ class EventCollection extends BaseCollection {
    * if one or more interests are not defined, or if github, facebook, and instagram are not URLs.
    * @returns The newly created docID.
    */
-  define({ eventName = '', createBy = '', username, place = '' }) {
+  define({ eventName = '', createBy = '', username, place = '', start = '', end = '',
+      tastes, capabilities, description }) {
     // make sure required fields are OK.
-    const checkPattern = { firstName: String, lastName: String, username: String, bio: String, picture: String,
-      title: String };
-    check({ eventName, createBy, username, place }, checkPattern);
-
-    if (this.find({ username }).count() > 0) {
-      throw new Meteor.Error(`${username} is previously defined in another Profile`);
-    }
+    const checkPattern = { eventName: String, createBy: String, username: String, start: String, end: String,
+      tastes, capabilities, description: String };
+    check({ eventName, createBy, username, place, start, end, tastes, capabilities, description }, checkPattern);
 
     // Throw an error if any of the passed Interest names are not defined.
     // Interests.assertNames(interests);
-    return this._collection.insert({ eventName, createBy, username, place });
+    return this._collection.insert({ eventName, createBy, username, place, start, end,
+      tastes, capabilities, description });
   }
 
   /**
@@ -73,7 +75,12 @@ class EventCollection extends BaseCollection {
     const createBy = doc.createBy;
     const username = doc.username;
     const place = doc.place;
-    return { eventName, createBy, username, place };
+    const start = doc.start;
+    const end = doc.end;
+    const tastes = doc.tastes;
+    const capabilities = doc.capabilities;
+    const description = doc.description;
+    return { eventName, createBy, username, place, start, end, tastes, capabilities, description };
   }
 }
 
