@@ -24,13 +24,14 @@ class ProfileCollection extends BaseCollection {
     super('Profile', new SimpleSchema({
       firstName: { type: String, optional: false },
       lastName: { type: String, optional: true },
+      username: { type: String },
       address: { type: String, optional: true },
       telephone: { type: String, optional: true },
       email: { type: String, optional: false },
       musicaltastes: { type: [String], optional: false },
       musicalcapabilities: { type: [String], optional: false },
       musicalgoals: { type: [String], optional: false },
-      picture: { type: SimpleSchema.RegEx.Url, optional: true },
+      // picture: { type: SimpleSchema.RegEx.Url, optional: true },
       youtube: { type: SimpleSchema.RegEx.Url, optional: true },
       soundcloud: { type: SimpleSchema.RegEx.Url, optional: true },
     }));
@@ -42,13 +43,15 @@ class ProfileCollection extends BaseCollection {
    * Profiles.define({ firstName: 'Philip',
    *                   lastName: 'Johnson',
    *                   username: 'johnson',
-   *                   bio: 'I have been a professor of computer science at UH since 1990.',
-   *                   interests: ['Application Development', 'Software Engineering', 'Databases'],
-   *                   title: 'Professor of Information and Computer Sciences',
+   *                   address: '2500 Campus Rd. Honolulu, HI 96822';
+   *                   telephone: '808-956-3489'
+   *                   email: 'johnson@hawaii.edu'
+   *                   musicaltastes: ['Jawaiian', 'Jazz'],
+   *                   musicalcapabilities: ['Ukulele', 'Trumpet'],
+   *                   musicalgoals: ['Play in a band', 'Casual playing'],
    *                   picture: 'http://philipmjohnson.org/headshot.jpg',
-   *                   github: 'https://github.com/philipmjohnson',
-   *                   facebook: 'https://facebook.com/philipmjohnson',
-   *                   instagram: 'https://instagram.com/philipmjohnson' });
+   *                   youtube: 'https://youtube.com/philipmjohnson',
+   *                   soundcloud: 'https://soundcloud.com/philipmjohnson',
    * @param { Object } description Object with required key username.
    * Remaining keys are optional.
    * Username must be unique for all users. It should be the UH email account.
@@ -57,10 +60,10 @@ class ProfileCollection extends BaseCollection {
    * if one or more interests are not defined, or if github, facebook, and instagram are not URLs.
    * @returns The newly created docID.
    */
-  define({ firstName = '', lastName = '', address = '', telephone = '', email = '', musicaltastes = '', musicalcapabilities ='', musicalgoals= '', picture = '', youtube = '', soundcloud = '' }) {
+  define({ firstName = '', lastName = '', username = '', address = '', telephone = '', email = '', tastes = '', capabilities ='', goals= '', youtube = '', soundcloud = '' }) {
     // make sure required fields are OK.
-    const checkPattern = { firstName: String, lastName: String, address: String, telephone: String, email : String, musicaltastes : String, musicalcapabilities : String, musicalgoals : String, picture: String, youtube: String, soundcloud: String };
-    check({ firstName, lastName, address, telephone, email, musicaltastes, musicalcapabilities, musicalgoals, picture, youtube, soundcloud }, checkPattern);
+    const checkPattern = { firstName: String, lastName: String, username: String, address: String, telephone: String, email : String, tastes : String, capabilities : String, goals : String, youtube: String, soundcloud: String };
+    check({ firstName, lastName, username, address, telephone, email, tastes, capabilities, goals, youtube, soundcloud }, checkPattern);
 
     if (this.find({ username }).count() > 0) {
       throw new Meteor.Error(`${username} is previously defined in another Profile`);
@@ -68,7 +71,7 @@ class ProfileCollection extends BaseCollection {
 
     // Throw an error if any of the passed Interest names are not defined.
     Interests.assertNames(interests);
-    return this._collection.insert({ firstName, lastName, address, telephone, email, musicaltastes, musicalcapabilities, musicalgoals, picture, youtube, soundcloud});
+    return this._collection.insert({ firstName, lastName, username, address, telephone, email, tastes, capabilities, goals, youtube, soundcloud});
   }
 
   /**
@@ -80,16 +83,17 @@ class ProfileCollection extends BaseCollection {
     const doc = this.findDoc(docID);
     const firstName = doc.firstName;
     const lastName = doc.lastName;
+    const username = doc.username;
     const address = doc.address;
     const telephone = doc.telephone;
     const email = doc.email;
-    const musicaltastes = doc.musicaltastes;
-    const musicalcapabilities = doc.musicalcapabilities;
-    const musicalgoals = doc.musicalgoals;
-    const picture = doc.picture;
+    const tastes = doc.tastes;
+    const capabilities = doc.capabilities;
+    const goals = doc.goals;
+    // const picture = doc.picture;
     const youtube = doc.youtube;
-    const soundclouod = doc.soundcloud;
-    return { firstName, lastName, address, telephone, email, musicaltastes, musicalcapabilities, musicalgoals, picture, youtube, soundcloud };
+    const soundcloud = doc.soundcloud;
+    return { firstName, lastName, username, address, telephone, email, tastes, capabilities, goals, youtube, soundcloud };
   }
 }
 

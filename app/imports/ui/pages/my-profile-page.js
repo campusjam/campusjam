@@ -50,7 +50,6 @@ Template.My_Profile_Page.helpers({
   },
 });
 
-
 Template.My_Profile_Page.events({
   'submit .profile-data-form'(event, instance) {
     event.preventDefault();
@@ -60,16 +59,29 @@ Template.My_Profile_Page.events({
     const address = event.target.Address.value;
     const telephone = event.target.Telephone.value;
     const email = event.target.Email.value;
-    const musicaltastes = event.target.Musicaltastes.value;
-    const musicalcapabilities = event.target.Musicalcapabilites.value;
-    const musicalgoals = event.target.Musicalgoals.value;
-    const picture = event.target.Picture.value;
+    const tastes = event.target.Tastes.value;
+    const capabilities = event.target.Capabilites.value;
+    const goals = event.target.Goals.value;
+    // const picture = event.target.Picture.value;
     const youtube = event.target.youtube.value;
     const soundcloud = event.target.soundcloud.value;
     // const selectedInterests = _.filter(event.target.Interests.selectedOptions, (option) => option.selected);
     // const interests = _.map(selectedInterests, (option) => option.value);
 
-    const updatedProfileData = { firstName, lastName, username, address, telephone, email, musicaltastes, musicalcapabilities, musicalgoals, picture, youtube, soundcloud };
+    const updatedProfileData = {
+      firstName,
+      lastName,
+      username,
+      address,
+      telephone,
+      email,
+      tastes,
+      capabilities,
+      goals,
+      picture,
+      youtube,
+      soundcloud,
+    };
 
     // Clear out any old validation errors.
     instance.context.resetValidation();
