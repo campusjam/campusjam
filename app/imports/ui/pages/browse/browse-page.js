@@ -1,7 +1,7 @@
 import { Template } from 'meteor/templating';
 import { ReactiveDict } from 'meteor/reactive-dict';
 import { _ } from 'meteor/underscore';
-import { Profiles } from '/imports/api/profile/ProfileCollection';
+import { Profiles } from '/imports/api/profiles/ProfilesCollection';
 import { Interests } from '/imports/api/interest/InterestCollection';
 
 const selectedInterestsKey = 'selectedInterests';

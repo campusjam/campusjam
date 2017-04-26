@@ -21,8 +21,8 @@
 
           <div class="field">
             <div class="two fields">
-              {{> Text_Form_Control label="Telephone" required=true value=(contactDataField 'telephone') errorMessage="Phone number must be a 10 digit number with dashes."}}
-              {{> Text_Form_Control label="Email" required=true value=(contactDataField 'email') errorMessage=(fieldError "email")}}
+              {{> Text_Form_Control label="Telephone" required=true value=profile.telephone errorMessage="Phone number must be a 10 digit number with dashes."}}
+              {{> Text_Form_Control label="Email" required=true value=profile.email errorMessage=(fieldError "email")}}
             </div>
           </div>
 
