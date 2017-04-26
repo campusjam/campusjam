@@ -12,14 +12,13 @@ Template.Calendar_Page.onCreated(() => {
 });
 
 Template.Calendar_Page.onRendered(() => {
-
   // Initialize the calendar.
   $('#event-calendar').fullCalendar({
     // Define the navigation buttons.
     header: {
-      left:   'title',
+      left: 'title',
       center: '',
-      right:  'today prev,next'
+      right: 'today prev,next',
     },
     // Add events to the calendar.
     events(start, end, timezone, callback) {
@@ -66,7 +65,7 @@ Template.Calendar_Page.onRendered(() => {
         let update = {
           _id: session._id,
           start: date,
-          end: date
+          end: date,
         };
 
         // Update the date of the event.

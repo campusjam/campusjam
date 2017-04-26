@@ -22,6 +22,7 @@ class EventCollection extends BaseCollection {
       eventName: { type: String, optional: true },
       createBy: { type: String, optional: true },
       place: { type: String, optional: true },
+      description: { type: String, optional: true },
     }));
   }
 
