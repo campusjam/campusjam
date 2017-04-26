@@ -10,7 +10,7 @@ import { Meteor } from 'meteor/meteor';
  * Profiles provide portfolio data for a user.
  * @extends module:Base~BaseCollection
  */
-class ProfileCollection extends BaseCollection {
+class EventCollection extends BaseCollection {
 
   /**
    * Creates the Profile collection.
@@ -79,4 +79,4 @@ class ProfileCollection extends BaseCollection {
 /**
  * Provides the singleton instance of this class to all other entities.
  */
-export const Profiles = new ProfileCollection();
+export const Events = new EventCollection();
