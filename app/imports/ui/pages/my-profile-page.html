@@ -47,7 +47,6 @@
             <!--<option value="guitar">Guitar</option>-->
             <!--<option value="other">Other</option>-->
 
-
           <div class="field">
             {{> Select_Form_Control label="Musical Goals" options=musicalgoals errorMessage=(fieldError "musicalgoals") multiple=true }}
           </div>
@@ -59,26 +58,10 @@
             <!--<option value="other">Other</option>-->
 
 
-          <div class="two fields" style="padding-top: 20px">
-            <div class="field">
-              <label>YouTube</label>
-              <div class="ui left icon input">
-                <input type="text" placeholder="YouTube URL or N/A if none">
-                <i class="youtube icon"></i>
-              </div>
-            </div>
+            {{> Social_Network_Form_Control label="YouTube" icon="youtube" placeholder="pmjohnson" value=profile.youtube errorMessage=(fieldError "youtube")}}
+            {{> Social_Network_Form_Control label="SoundCloud" icon="soundcloud" placeholder="pmjohnson" value=profile.soundcloud errorMessage=(fieldError "soundcloud")}}
 
-            <div class="field">
-              <label>SoundCloud</label>
-              <div class="ui left icon input">
-                <input type="text" placeholder="SoundCloud URL or N/A if none">
-                <i class="soundcloud icon"></i>
-              </div>
-            </div>
-          </div>
-
-          <button class="ui success button" style="margin-top: 20px" type="submit">Update</button>
-
+          <button class="ui blue success button" style="margin-top: 20px" type="submit">Update</button>
 
         </form>
       </div>
