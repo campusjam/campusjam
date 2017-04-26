@@ -1,86 +1,88 @@
 <template name="My_Profile_Page">
-  <div class="ui container">
-    <div class="ui form" style="padding: 20px 50px 20px 50px">
-      <h1 class="ui dividing header" style="margin-bottom: 30px">My Profile</h1>
-      <div class="two fields">
-        <div class="field">
-          <label>First</label>
-          <input type="text" placeholder="John">
-        </div>
-        <div class="field">
-          <label>Last</label>
-          <input type="text" placeholder="Doe">
-        </div>
-      </div>
-
-      <div class="field">
-        <label>Address</label>
-        <input type="text" placeholder="2500 Campus Rd. Honolulu, HI 96822">
-      </div>
-
-      <div class="two fields">
-        <div class="field">
-          <label>Telephone</label>
-          <input type="text" placeholder="XXX-XXX-XXXX">
-        </div>
-        <div class="field">
-          <label>Email</label>
-          <input type="text" placeholder="johndoe@hawaii.edu">
-        </div>
-      </div>
-
-      <div class="ui sub header">Musical Tastes</div>
-      <select multiple="" name="music" class="ui fluid normal dropdown">
-        <option value="">Tastes</option>
-        <option value="jazz">Jazz</option>
-        <option value="classical">Classical</option>
-        <option value="randb">R&B</option>
-        <option value="rock">Rock</option>
-        <option value="other">Other</option>
-      </select>
-
-      <div class="ui sub header">Musical Capabilities</div>
-      <select multiple="" name="capabilities" class="ui fluid normal dropdown">
-        <option value="">Capabilities</option>
-        <option value="piano">Piano</option>
-        <option value="trumpet">Trumpet</option>
-        <option value="drums">Drums</option>
-        <option value="guitar">Guitar</option>
-        <option value="other">Other</option>
-      </select>
-
-      <div class="ui sub header">Musical Goals</div>
-      <select multiple="" name="goals" class="ui fluid normal dropdown">
-        <option value="">Goals</option>
-        <option value="band">Play in a band</option>
-        <option value="casual">Casual playing</option>
-        <option value="learn">Learn to play an instrument</option>
-        <option value="band">Play in a band</option>
-        <option value="other">Other</option>
-      </select>
-
-      <div class="two fields" style="padding-top: 20px">
-        <div class="field">
-          <label>YouTube</label>
-          <div class="ui left icon input">
-            <input type="text" placeholder="YouTube URL or N/A if none">
-            <i class="youtube icon"></i>
+  {{#If_Logged_In}}
+    <div class="ui container">
+      <div class="ui form" style="padding: 20px 50px 20px 50px">
+        <h1 class="ui dividing header" style="margin-bottom: 30px">My Profile</h1>
+        <div class="two fields">
+          <div class="field">
+            <label>First</label>
+            <input type="text" placeholder="John">
+          </div>
+          <div class="field">
+            <label>Last</label>
+            <input type="text" placeholder="Doe">
           </div>
         </div>
 
         <div class="field">
-          <label>SoundCloud</label>
-          <div class="ui left icon input">
-            <input type="text" placeholder="SoundCloud URL or N/A if none">
-            <i class="soundcloud icon"></i>
+          <label>Address</label>
+          <input type="text" placeholder="2500 Campus Rd. Honolulu, HI 96822">
+        </div>
+
+        <div class="two fields">
+          <div class="field">
+            <label>Telephone</label>
+            <input type="text" placeholder="XXX-XXX-XXXX">
+          </div>
+          <div class="field">
+            <label>Email</label>
+            <input type="text" placeholder="johndoe@hawaii.edu">
           </div>
         </div>
+
+        <div class="ui sub header">Musical Tastes</div>
+        <select multiple="" name="music" class="ui fluid normal dropdown">
+          <option value="">Tastes</option>
+          <option value="jazz">Jazz</option>
+          <option value="classical">Classical</option>
+          <option value="randb">R&B</option>
+          <option value="rock">Rock</option>
+          <option value="other">Other</option>
+        </select>
+
+        <div class="ui sub header">Musical Capabilities</div>
+        <select multiple="" name="capabilities" class="ui fluid normal dropdown">
+          <option value="">Capabilities</option>
+          <option value="piano">Piano</option>
+          <option value="trumpet">Trumpet</option>
+          <option value="drums">Drums</option>
+          <option value="guitar">Guitar</option>
+          <option value="other">Other</option>
+        </select>
+
+        <div class="ui sub header">Musical Goals</div>
+        <select multiple="" name="goals" class="ui fluid normal dropdown">
+          <option value="">Goals</option>
+          <option value="band">Play in a band</option>
+          <option value="casual">Casual playing</option>
+          <option value="learn">Learn to play an instrument</option>
+          <option value="band">Play in a band</option>
+          <option value="other">Other</option>
+        </select>
+
+        <div class="two fields" style="padding-top: 20px">
+          <div class="field">
+            <label>YouTube</label>
+            <div class="ui left icon input">
+              <input type="text" placeholder="YouTube URL or N/A if none">
+              <i class="youtube icon"></i>
+            </div>
+          </div>
+
+          <div class="field">
+            <label>SoundCloud</label>
+            <div class="ui left icon input">
+              <input type="text" placeholder="SoundCloud URL or N/A if none">
+              <i class="soundcloud icon"></i>
+            </div>
+          </div>
+        </div>
+
+        <button class="ui button" style="margin-top: 20px" type="submit">Update</button>
+
       </div>
-
-      <button class="ui button" style="margin-top: 20px" type="submit">Update</button>
-
     </div>
-  </div>
+  {{/If_Logged_In}}
 
   <script>
     $('.ui.normal.dropdown')

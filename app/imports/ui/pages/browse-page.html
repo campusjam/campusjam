@@ -1,13 +1,13 @@
 <template name="Browse_Page">
+  {{#If_Logged_In}}
     <div class="ui landing container">
-        <h1 style="padding: 30px; text-align: center">Browse profiles of similar interests and abilities.</h1>
+      <h1 style="padding: 30px; text-align: center">Browse profiles of similar interests and abilities.</h1>
       <div class="ui borderless center aligned segment">
-      <div class="ui left icon action input" style="padding:30px">
-        <i class="search icon"></i>
-        <input type="text" placeholder="Enter keyword(s)">
-        <div class="ui search button">Search</div>
-      </div>
-
+        <div class="ui left icon action input" style="padding:30px">
+          <i class="search icon"></i>
+          <input type="text" placeholder="Enter keyword(s)">
+          <div class="ui search button">Search</div>
+        </div>
 
 
         <div class="ui cards">
@@ -118,4 +118,5 @@
         </div>
       </div>
     </div>
+  {{/If_Logged_In}}
 </template>
