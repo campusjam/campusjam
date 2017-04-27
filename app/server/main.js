@@ -3,4 +3,5 @@ import '/imports/startup/both';
 import '/imports/api/stuff';
 import '/imports/api/base';
 import '/imports/api/profiles';
+import '/imports/api/capability';
 // import '/imports/api/interests';

@@ -6,6 +6,7 @@
 import { SimpleSchema } from 'meteor/aldeed:simple-schema';
 import BaseCollection from '/imports/api/base/BaseCollection';
 // import { Interests } from '/imports/api/interest/InterestCollection';
+import { Capabilities } from '/imports/api/capability/CapabilityCollection';
 import { check } from 'meteor/check';
 import { Meteor } from 'meteor/meteor';
 
@@ -60,9 +61,11 @@ class ProfileCollection extends BaseCollection {
    * if one or more interests are not defined, or if github, facebook, and instagram are not URLs.
    * @returns The newly created docID.
    */
-  define({ firstName = '', lastName = '', username = '', address = '', telephone = '', email = '', tastes = '', capabilities ='', goals= '', youtube = '', soundcloud = '' }) {
+  define({ firstName = '', lastName = '', username = '', address = '', telephone = '', email = '',
+      tastes = '', capabilities = '', goals = '', youtube = '', soundcloud = '' }) {
     // make sure required fields are OK.
-    const checkPattern = { firstName: String, lastName: String, username: String, telephone: String, email : String, tastes : String, capabilities : String, goals : String, youtube: String, soundcloud: String };
+    const checkPattern = { firstName: String, lastName: String, username: String, telephone: String,
+      email: String, tastes: String, capabilities: String, goals: String, youtube: String, soundcloud: String };
     check({ firstName, lastName, username, address, telephone, email, tastes, capabilities, goals }, checkPattern);
 
     if (this.find({ username }).count() > 0) {

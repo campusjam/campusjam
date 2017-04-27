@@ -7,7 +7,7 @@ import { Template } from 'meteor/templating';
 import { ReactiveDict } from 'meteor/reactive-dict';
 import { FlowRouter } from 'meteor/kadira:flow-router';
 import { _ } from 'meteor/underscore';
-// import { Profiles } from '/imports/api/profiles/ProfilesCollection';
+import { Profiles } from '/imports/api/profiles/ProfilesCollection';
 // import { Interests } from '/imports/api/interest/InterestCollection';
 import { Capabilities } from './imports/api/capability/CapabilityCollection';
 
@@ -17,6 +17,7 @@ const displayErrorMessages = 'displayErrorMessages';
 Template.My_Profile_Page.onCreated(function onCreated() {
   // this.subscribe(Interests.getPublicationName());
   this.subscribe(Profiles.getPublicationName());
+  this.subscribe(Capabilities.getPublicationName());
   this.messageFlags = new ReactiveDict();
   this.messageFlags.set(displaySuccessMessage, false);
   this.messageFlags.set(displayErrorMessages, false);
@@ -49,14 +50,14 @@ Template.My_Profile_Page.helpers({
   //             return { label: taste.name, selected: _.contains(selectedTastes, taste.name) };
   //           });
   // },
-  // capabilities() {
-  //   const profile = Profiles.findDoc(FlowRouter.getParam('username'));
-  //   const selectedCapabilities = profile.capabilities;
-  //   return profile && _.map(Capabilities.findAll(),
-  //           function makeCapabilitiesObject(capability) {
-  //             return { label: capability.name, selected: _.contains(selectedCapabilities, capability.name) };
-  //           });
-  // },
+  capabilities() {
+    const profile = Profiles.findDoc(FlowRouter.getParam('username'));
+    const selectedCapabilities = profile.capabilities;
+    return profile && _.map(Capabilities.findAll(),
+            function makeCapabilitiesObject(capability) {
+              return { label: capability.name, selected: _.contains(selectedCapabilities, capability.name) };
+            });
+  },
   // goals() {
   //   const profile = Profiles.findDoc(FlowRouter.getParam('username'));
   //   const selectedGoals = profile.goals;
@@ -77,7 +78,7 @@ Template.My_Profile_Page.events({
     const telephone = event.target.Telephone.value;
     const email = event.target.Email.value;
     // const tastes = event.target.Tastes.value;
-    // const capabilities = event.target.Capabilites.value;
+    const capabilities = event.target.Capabilites.value;
     // const goals = event.target.Goals.value;
     // const picture = event.target.Picture.value;
     // const youtube = event.target.youtube.value;
@@ -93,7 +94,7 @@ Template.My_Profile_Page.events({
       telephone,
       email,
       // tastes,
-      // capabilities,
+      capabilities,
       // goals,
       // picture,
       // youtube,

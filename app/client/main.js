@@ -7,5 +7,7 @@ import '/imports/ui/stylesheets/style.css';
 import '/imports/ui/components/form-controls';
 import '/imports/api/base';
 import '/imports/api/profiles';
+import '/imports/api/capability';
+
 // import '/imports/api/events';
 

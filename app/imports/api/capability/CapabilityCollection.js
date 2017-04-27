@@ -16,7 +16,7 @@ class CapabilityCollection extends BaseCollection {
    * Creates the Interest collection.
    */
   constructor() {
-    super('Interest', new SimpleSchema({
+    super('Capability', new SimpleSchema({
       name: { type: String },
       description: { type: String, optional: true },
     }));
@@ -116,4 +116,4 @@ class CapabilityCollection extends BaseCollection {
 /**
  * Provides the singleton instance of this class to all other entities.
  */
-export const Interests = new CapabilityCollection();
+export const Capabilities = new CapabilityCollection();
