@@ -1,45 +1,50 @@
 <template name="My_Profile_Page">
   {{#If_Logged_In}}
-    <div class="ui container">
-      <div class="ui form" style="padding: 20px 50px 20px 50px">
-        <h1 class="ui dividing header" style="margin-bottom: 30px">My Profile</h1>
+    {{#if Template.subscriptionsReady}}
+      <div class="ui container">
+        <div class="ui form" style="padding: 20px 50px 20px 50px">
+          <h1 class="ui dividing header" style="margin-bottom: 30px">My Profile</h1>
 
-        <form class="ui equal width form profile-data-form {{ successClass }} {{ errorClass }}">
-          <div class="fields">
+          <form class="ui equal width form profile-data-form {{ successClass }} {{ errorClass }}">
+            <div class="fields">
+              <div class="field">
+                {{> Text_Form_Control label="First" required = true placeholder="Philip" value=profile.firstName errorMessage=(fieldError "firstName")}}
+              </div>
+              <div class="field">
+                {{> Text_Form_Control label="Last" required = true placeholder="Johnson" value=profile.lastName errorMessage=(fieldError "lastName")}}
+              </div>
+            </div>
+
             <div class="field">
-              {{> Text_Form_Control label="First" required = true placeholder="Philip" value=profile.firstName errorMessage=(fieldError "firstName")}}
+              {{> Text_Form_Control label="Username" required = true placeholder="johnson" value=profile.username errorMessage=(fieldError "username")}}
             </div>
+
             <div class="field">
-              {{> Text_Form_Control label="Last" required = true placeholder="Johnson" value=profile.lastName errorMessage=(fieldError "lastName")}}
+              {{> Text_Form_Control label="Address" placeholder="2500 Campus Rd. Honolulu, HI 96822" value=profile.address errorMessage=(fieldError "address")}}
             </div>
-          </div>
 
-          <div class="field">
-            {{> Text_Form_Control label="Address" placeholder="2500 Campus Rd. Honolulu, HI 96822" value=profile.address errorMessage=(fieldError "address")}}
-          </div>
-
-          <div class="field">
-            <div class="two fields">
-              {{> Text_Form_Control label="Telephone" required=true value=profile.telephone errorMessage="Phone number must be a 10 digit number with dashes."}}
-              {{> Text_Form_Control label="Email" required=true value=profile.email errorMessage=(fieldError "email")}}
+            <div class="field">
+              <div class="two fields">
+                {{> Text_Form_Control label="Telephone" required=true value=profile.telephone errorMessage="Phone number must be a 10 digit number with dashes."}}
+                {{> Text_Form_Control label="Email" required=true value=profile.email errorMessage=(fieldError "email")}}
+              </div>
             </div>
-          </div>
 
-          <div class="field">
-            {{> Select_Form_Control label="Tastes" required = true options=tastes errorMessage=(fieldError "tastes") multiple=true }}
-          </div>
-          <!--<select multiple="" name="music" class="ui fluid normal dropdown">-->
-          <!--<option value="">Tastes</option>-->
-          <!--<option value="jazz">Jazz</option>-->
-          <!--<option value="classical">Classical</option>-->
-          <!--<option value="randb">R&B</option>-->
-          <!--<option value="rock">Rock</option>-->
-          <!--<option value="other">Other</option>-->
-          <!--</select>-->
+            <div class="field">
+              {{> Select_Form_Control label="Tastes" required = true options=tastes errorMessage=(fieldError "tastes") multiple=true }}
+            </div>
+            <!--<select multiple="" name="music" class="ui fluid normal dropdown">-->
+            <!--<option value="">Tastes</option>-->
+            <!--<option value="jazz">Jazz</option>-->
+            <!--<option value="classical">Classical</option>-->
+            <!--<option value="randb">R&B</option>-->
+            <!--<option value="rock">Rock</option>-->
+            <!--<option value="other">Other</option>-->
+            <!--</select>-->
 
-          <div class="field">
-            {{> Select_Form_Control label="Capabilities" required = true options=capabilities errorMessage=(fieldError "capabilities") multiple=true }}
-          </div>
+            <div class="field">
+              {{> Select_Form_Control label="Capabilities" required = true options=capabilities errorMessage=(fieldError "capabilities") multiple=true }}
+            </div>
             <!--<option value="">Capabilities</option>-->
             <!--<option value="piano">Piano</option>-->
             <!--<option value="trumpet">Trumpet</option>-->
@@ -47,9 +52,9 @@
             <!--<option value="guitar">Guitar</option>-->
             <!--<option value="other">Other</option>-->
 
-          <div class="field">
-            {{> Select_Form_Control label="Goals" required = true options=goals errorMessage=(fieldError "goals") multiple=true }}
-          </div>
+            <div class="field">
+              {{> Select_Form_Control label="Goals" required = true options=goals errorMessage=(fieldError "goals") multiple=true }}
+            </div>
             <!--<option value="">Goals</option>-->
             <!--<option value="band">Play in a band</option>-->
             <!--<option value="casual">Casual playing</option>-->
@@ -58,18 +63,19 @@
             <!--<option value="other">Other</option>-->
 
 
-          <div class="field">
-            <div class="two fields">
-            {{> Social_Network_Form_Control label="YouTube" icon="youtube" placeholder="pmjohnson" value=profile.youtube errorMessage=(fieldError "youtube")}}
-            {{> Social_Network_Form_Control label="SoundCloud" icon="soundcloud" placeholder="pmjohnson" value=profile.soundcloud errorMessage=(fieldError "soundcloud")}}
+            <div class="field">
+              <div class="two fields">
+                {{> Social_Network_Form_Control label="YouTube" icon="youtube" placeholder="pmjohnson" value=profile.youtube errorMessage=(fieldError "youtube")}}
+                {{> Social_Network_Form_Control label="SoundCloud" icon="soundcloud" placeholder="pmjohnson" value=profile.soundcloud errorMessage=(fieldError "soundcloud")}}
+              </div>
             </div>
-          </div>
 
-          <button class="ui blue success button" style="margin-top: 20px" type="submit">Update</button>
+            <button class="ui blue success button" style="margin-top: 20px" type="submit">Update</button>
 
-        </form>
+          </form>
+        </div>
       </div>
-    </div>
+    {{/if}}
   {{/If_Logged_In}}
 
   <script>

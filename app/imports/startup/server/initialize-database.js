@@ -1,6 +1,6 @@
 import { Meteor } from 'meteor/meteor';
-import { Profiles } from '/imports/api/profile/ProfileCollection';
-import { Interests } from '/imports/api/interest/InterestCollection';
+import { Profiles } from '/imports/api/profiles/ProfilesCollection';
+// import { Interests } from '/imports/api/interest/InterestCollection';
 import { _ } from 'meteor/underscore';
 
 /* global Assets */
@@ -27,18 +27,18 @@ function restoreCollection(collection, restoreJSON) {
   _.each(definitions, definition => collection.define(definition));
 }
 
-Meteor.startup(() => {
-  /** Only initialize database if it's empty. */
-  const collectionList = [Interests, Profiles];
-  const totalDocuments = _.reduce(collectionList, function reducer(memo, collection) {
-    return memo + collection.count();
-  }, 0);
-  if (totalDocuments === 0) {
-    const fileName = Meteor.settings.public.initialDatabaseFileName;
-    console.log(`Restoring database from file ${fileName}.`);
-    const restoreJSON = JSON.parse(Assets.getText(fileName));
-    _.each(collectionList, collection => {
-      restoreCollection(collection, restoreJSON);
-    });
-  }
-});
+// Meteor.startup(() => {
+//   /** Only initialize database if it's empty. */
+//   const collectionList = [Profiles];
+//   const totalDocuments = _.reduce(collectionList, function reducer(memo, collection) {
+//     return memo + collection.count();
+//   }, 0);
+//   if (totalDocuments === 0) {
+//     const fileName = Meteor.settings.public.initialDatabaseFileName;
+//     console.log(`Restoring database from file ${fileName}.`);
+//     const restoreJSON = JSON.parse(Assets.getText(fileName));
+//     _.each(collectionList, collection => {
+//       restoreCollection(collection, restoreJSON);
+//     });
+//   }
+// });

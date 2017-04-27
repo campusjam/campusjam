@@ -9,4 +9,5 @@ import './if-logged-in.js';
 import './loading.html';
 import './cas-login.html';
 import './cas-login.js';
-
+import './if-authorized.html';
+import './if-authorized.js';

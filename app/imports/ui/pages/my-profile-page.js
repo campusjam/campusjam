@@ -40,14 +40,30 @@ Template.My_Profile_Page.helpers({
   profile() {
     return Profiles.findDoc(FlowRouter.getParam('username'));
   },
-  interests() {
-    const profile = Profiles.findDoc(FlowRouter.getParam('username'));
-    const selectedInterests = profile.interests;
-    return profile && _.map(Interests.findAll(),
-            function makeInterestObject(interest) {
-              return { label: interest.name, selected: _.contains(selectedInterests, interest.name) };
-            });
-  },
+  // tastes() {
+  //   const profile = Profiles.findDoc(FlowRouter.getParam('username'));
+  //   const selectedTastes = profile.tastes;
+  //   return profile && _.map(Tastes.findAll(),
+  //           function makeTastesObject(taste) {
+  //             return { label: taste.name, selected: _.contains(selectedTastes, taste.name) };
+  //           });
+  // },
+  // capabilities() {
+  //   const profile = Profiles.findDoc(FlowRouter.getParam('username'));
+  //   const selectedCapabilities = profile.capabilities;
+  //   return profile && _.map(Capabilities.findAll(),
+  //           function makeCapabilitiesObject(capability) {
+  //             return { label: capability.name, selected: _.contains(selectedCapabilities, capability.name) };
+  //           });
+  // },
+  // goals() {
+  //   const profile = Profiles.findDoc(FlowRouter.getParam('username'));
+  //   const selectedGoals = profile.goals;
+  //   return profile && _.map(Goals.findAll(),
+  //           function makeGoalsObject(taste) {
+  //             return { label: goal.name, selected: _.contains(selectedGoals, goal.name) };
+  //           });
+  // },
 });
 
 Template.My_Profile_Page.events({
@@ -59,12 +75,12 @@ Template.My_Profile_Page.events({
     const address = event.target.Address.value;
     const telephone = event.target.Telephone.value;
     const email = event.target.Email.value;
-    const tastes = event.target.Tastes.value;
-    const capabilities = event.target.Capabilites.value;
-    const goals = event.target.Goals.value;
+    // const tastes = event.target.Tastes.value;
+    // const capabilities = event.target.Capabilites.value;
+    // const goals = event.target.Goals.value;
     // const picture = event.target.Picture.value;
-    const youtube = event.target.youtube.value;
-    const soundcloud = event.target.soundcloud.value;
+    // const youtube = event.target.youtube.value;
+    // const soundcloud = event.target.soundcloud.value;
     // const selectedInterests = _.filter(event.target.Interests.selectedOptions, (option) => option.selected);
     // const interests = _.map(selectedInterests, (option) => option.value);
 
@@ -75,12 +91,12 @@ Template.My_Profile_Page.events({
       address,
       telephone,
       email,
-      tastes,
-      capabilities,
-      goals,
-      picture,
-      youtube,
-      soundcloud,
+      // tastes,
+      // capabilities,
+      // goals,
+      // picture,
+      // youtube,
+      // soundcloud,
     };
 
     // Clear out any old validation errors.
