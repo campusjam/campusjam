@@ -1,6 +1,6 @@
 <template name="Header">
   {{#if canShow}}
-    <div style="margin-top: 0; border-radius: 0px" class="ui borderless inverted menu">
+    <div style="margin-top: 0; border-radius: 0px;" class="ui borderless inverted menu">
       <div class="ui container">
         <a class="item" href="{{pathFor 'Home_Page'}}"><h1>Home</h1></a>
         <a class="{{ isActiveRoute 'My_Profile_Page'}} item" href="{{ pathFor 'My_Profile_Page' }}">My Profile</a>
@@ -10,7 +10,7 @@
       </div>
     </div>
   {{else}}
-    <div style="border-radius: 0px" class="ui borderless inverted menu">
+    <div style="background-color: #03704D; border-radius: 0px" class="ui borderless inverted menu">
       <a href="#" class="right item">{{> Cas_Login }}</a>
     </div>
   {{/if}}
