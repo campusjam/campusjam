@@ -5,7 +5,7 @@
 
 import { SimpleSchema } from 'meteor/aldeed:simple-schema';
 import BaseCollection from '/imports/api/base/BaseCollection';
-// import { Interests } from '/imports/api/interest/InterestCollection';
+ import { Tastes } from '/imports/api/taste/TasteCollection';
 import { check } from 'meteor/check';
 import { Meteor } from 'meteor/meteor';
 
@@ -33,6 +33,7 @@ class ProfileCollection extends BaseCollection {
       picture: { type: SimpleSchema.RegEx.Url, optional: true },
       youtube: { type: SimpleSchema.RegEx.Url, optional: true },
       soundcloud: { type: SimpleSchema.RegEx.Url, optional: true },
+      tastes: { type: [String], optional: true },
     }));
   }
 
@@ -57,7 +58,7 @@ class ProfileCollection extends BaseCollection {
    * if one or more interests are not defined, or if github, facebook, and instagram are not URLs.
    * @returns The newly created docID.
    */
-  define({ firstName = '', lastName = '', address = '', telephone = '', email = '', musicaltastes = '', musicalcapabilities ='', musicalgoals= '', picture = '', youtube = '', soundcloud = '' }) {
+  define({ firstName = '', lastName = '', address = '', telephone = '', email = '', musicaltastes = '', musicalcapabilities ='', musicalgoals= '', picture = '', youtube = '', soundcloud = '', tastes }) {
     // make sure required fields are OK.
     const checkPattern = { firstName: String, lastName: String, address: String, telephone: String, email: String, musicaltastes: String, musicalcapabilities: String, musicalgoals: String, picture: String, youtube: String, soundcloud: String };
     check({ firstName, lastName, address, telephone, email, musicaltastes, musicalcapabilities, musicalgoals, picture, youtube, soundcloud }, checkPattern);
@@ -67,8 +68,8 @@ class ProfileCollection extends BaseCollection {
     }
 
     // Throw an error if any of the passed Interest names are not defined.
-    Interests.assertNames(interests);
-    return this._collection.insert({ firstName, lastName, address, telephone, email, musicaltastes, musicalcapabilities, musicalgoals, picture, youtube, soundcloud});
+    Tastes.assertNames(tastes);
+    return this._collection.insert({ firstName, lastName, address, telephone, email, musicaltastes, musicalcapabilities, musicalgoals, picture, youtube, soundcloud, tastes});
   }
 
   /**
@@ -88,8 +89,9 @@ class ProfileCollection extends BaseCollection {
     const musicalgoals = doc.musicalgoals;
     const picture = doc.picture;
     const youtube = doc.youtube;
-    const soundclouod = doc.soundcloud;
-    return { firstName, lastName, address, telephone, email, musicaltastes, musicalcapabilities, musicalgoals, picture, youtube, soundcloud };
+    const soundcloud = doc.soundcloud;
+    const tastes = doc.tastes;
+    return { firstName, lastName, address, telephone, email, musicaltastes, musicalcapabilities, musicalgoals, picture, youtube, soundcloud, tastes };
   }
 }
 

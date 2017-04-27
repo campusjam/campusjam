@@ -4,16 +4,16 @@ import { check } from 'meteor/check';
 import { Meteor } from 'meteor/meteor';
 import { _ } from 'meteor/underscore';
 
-/** @module Taste */
+/** @module Interest */
 
 /**
- * Represents a specific taste, such as "Jazz".
+ * Represents a specific interest, such as "Software Engineering".
  * @extends module:Base~BaseCollection
  */
 class TasteCollection extends BaseCollection {
 
   /**
-   * Creates the Taste collection.
+   * Creates the Interest collection.
    */
   constructor() {
     super('Taste', new SimpleSchema({
@@ -23,9 +23,9 @@ class TasteCollection extends BaseCollection {
   }
 
   /**
-   * Defines a new Taste.
+   * Defines a new Interest.
    * @example
-   * Interests.define({ name: 'Jazz',
+   * Interests.define({ name: 'Software Engineering',
    *                    description: 'Methods for group development of large, high quality software systems' });
    * @param { Object } description Object with keys name and description.
    * Name must be previously undefined. Description is optional.
@@ -48,9 +48,9 @@ class TasteCollection extends BaseCollection {
    * @returns { String } An interest name.
    * @throws { Meteor.Error} If the interest docID cannot be found.
    */
-  findName(interestID) {
-    this.assertDefined(interestID);
-    return this.findDoc(interestID).name;
+  findName(tasteID) {
+    this.assertDefined(tasteID);
+    return this.findDoc(tasteID).name;
   }
 
   /**
@@ -59,8 +59,8 @@ class TasteCollection extends BaseCollection {
    * @returns { Array }
    * @throws { Meteor.Error} If any of the instanceIDs cannot be found.
    */
-  findNames(interestIDs) {
-    return interestIDs.map(interestID => this.findName(interestID));
+  findNames(tasteIDs) {
+    return tasteIDs.map(interestID => this.findName(tasteID));
   }
 
   /**
@@ -116,4 +116,4 @@ class TasteCollection extends BaseCollection {
 /**
  * Provides the singleton instance of this class to all other entities.
  */
-export const Interests = new InterestCollection();
+export const Tastes = new TasteCollection();
