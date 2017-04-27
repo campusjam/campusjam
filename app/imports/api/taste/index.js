@@ -1,0 +1,1 @@
+import './TasteCollection.js';
