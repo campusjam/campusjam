@@ -2,83 +2,71 @@
   "comment": "Initial contents for the BowFolios database. For development purposes only.",
   "collections": [
     {
-      "name": "InterestCollection",
+      "name": "TastesCollection",
       "contents": [
         {
-          "name": "Software Engineering",
-          "description": "Techniques for development of high quality systems"
+          "name": "Jazz"
         },
         {
-          "name": "Algorithms",
-          "description": "A set of rules to be followed in computation"
+          "name": "Classical"
         },
         {
-          "name": "Mobile Networks",
-          "description": "Networks created using mobile devices."
+          "name": "R&B"
         },
         {
-          "name": "Sailing",
-          "description": ""
+          "name": "Rock"
         },
         {
-          "name": "Mars",
-          "description": ""
+          "name": "Jawaiian"
         },
         {
-          "name": "Imu Cooking",
-          "description": "Hawaiian practice of cooking in a pit."
+          "name": "Country"
         },
         {
-          "name": "Scuba",
-          "description": ""
+          "name": "Pop"
+        }
+      ]
+    },
+    {
+      "name": "CapabilitiesCollection",
+      "contents": [
+        {
+          "name": "Piano"
         },
         {
-          "name": "Photography",
-          "description": ""
+          "name": "Trumpet"
         },
         {
-          "name": "Wind surfing",
-          "description": ""
+          "name": "Drums"
         },
         {
-          "name": "Psychology",
-          "description": ""
+          "name": "Guitar"
         },
         {
-          "name": "Motorcycling",
-          "description": ""
+          "name": "Ukulele"
         },
         {
-          "name": "Accreditation",
-          "description": ""
+          "name": "Violin"
         },
         {
-          "name": "Paddling",
-          "description": ""
+          "name": "Saxophone"
+        }
+      ]
+    },
+    {
+      "name": "GoalsCollection",
+      "contents": [
+        {
+          "name": "Band"
         },
         {
-          "name": "Crossfit",
-          "description": ""
+          "name": "Casual"
         },
         {
-          "name": "Cybersecurity",
-          "description": ""
+          "name": "Learn"
         },
         {
-          "name": "Surfing",
-          "description": ""
-        },
-        {
-          "name": "Computer Vision",
-          "description": ""
-        },
-        {
-          "name": "Martial Arts",
-          "description": ""
-        },
-        {
-          "name": "Evolutionary Computation",
-          "description": ""
+          "name": "Orchestra"
         }
       ]
     },
@@ -86,63 +74,83 @@
       "name": "ProfileCollection",
       "contents": [
         {
-          "firstName": "Lee",
-          "lastName": "Altenberg",
-          "username": "altenber",
-          "bio": "I am an Associate Professor of Information and Computer Sciences at the University of Hawaii.",
-          "interests": [
-            "Evolutionary Computation"
+          "firstName": "John",
+          "lastName": "Chen",
+          "username": "john",
+          "address": "2500 Campus Rd. Honolulu, HI 96822",
+          "telephone": "808-956-3489",
+          "email": "john@hawaii.edu",
+          "tastes": [
+            "Jazz"
           ],
-          "title": "Associate Professor, Information and Computer Sciences",
-          "picture": "/images/altenberg.jpg"
+          "capabilities": [
+            "Saxophone"
+          ],
+          "goals": [
+            "Band"
+          ],
+          "youtube" : "youtube.com/johnsmusic",
+          "soundcloud" : "soundcloud.com/johnsmusic"
         },
         {
-          "firstName": "Kyungim",
-          "lastName": "Baek",
-          "username": "baek",
-          "bio": "I am an Associate Professor of Information and Computer Sciences at the University of Hawaii.",
-          "interests": [
-            "Computer Vision"
+          "firstName": "Jake",
+          "lastName": "Smith",
+          "username": "jake",
+          "address": "2550 Campus Rd. Honolulu, HI 96822",
+          "telephone": "808-956-3485",
+          "email": "jake@hawaii.edu",
+          "tastes": [
+            "Jazz",
+            "Country"
           ],
-          "title": "Associate Professor, Information and Computer Sciences",
-          "picture": "/images/baek.jpg"
+          "capabilities": [
+            "Guitar"
+          ],
+          "goals": [
+            "Band",
+            "Casual"
+          ],
+          "youtube" : "youtube.com/jakesmusic",
+          "soundcloud" : "soundcloud.com/jakesmusic"
         },
         {
-          "firstName": "Edo",
-          "lastName": "Biagioni",
-          "username": "esb",
-          "bio": "I am an Associate Professor of Information and Computer Sciences at the University of Hawaii.",
-          "interests": [
-            "Mobile Networks",
-            "Sailing"
+          "firstName": "Ashley",
+          "lastName": "Akamine",
+          "username": "ashley",
+          "address": "2690 Campus Rd. Honolulu, HI 96822",
+          "telephone": "808-956-5489",
+          "email": "ashley@hawaii.edu",
+          "tastes": [
+            "Jawaiian",
+            "Pop"
           ],
-          "title": "Associate Professor, Information and Computer Sciences",
-          "picture": "/images/biagioni.jpg"
+          "capabilities": [
+            "Trumpet"
+          ],
+          "goals": [
+            "Band"
+          ],
+          "youtube" : "youtube.com/ashleysmusic",
+          "soundcloud" : "soundcloud.com/ashleysmusic"
         },
         {
-          "firstName": "Kim",
-          "lastName": "Binsted",
-          "username": "binsted",
-          "bio": "I am an Associate Professor of Information and Computer Sciences at the University of Hawaii.",
-          "interests": [
-            "Mars",
-            "Imu Cooking"
+          "firstName": "Philip",
+          "lastName": "Johnson",
+          "username": "philip",
+          "address": "2450 Campus Rd. Honolulu, HI 96822",
+          "telephone": "808-956-3488",
+          "email": "philip@hawaii.edu",
+          "tastes": [
+            "Jawaiian"
           ],
-          "title": "Associate Professor, Information and Computer Sciences",
-          "picture": "/images/binsted.jpg"
-        },
-        {
-          "firstName": "Henri",
-          "lastName": "Casanova",
-          "username": "henric",
-          "github": "henricasanova",
-          "bio": "I am a Professor of Information and Computer Sciences at the University of Hawaii.",
-          "interests": [
-            "Surfing",
-            "Photography"
+          "capabilities": [
+            "Ukulele"
           ],
-          "title": "Professor, Information and Computer Sciences",
-          "picture": "/images/casanova.jpg"
+          "goals": [
+            "Casual"
+          ],
+          "youtube" : "youtube.com/philipssmusic",
+          "soundcloud" : "soundcloud.com/philipsmusic"
         }
       ]
     }

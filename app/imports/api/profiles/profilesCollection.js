@@ -23,14 +23,14 @@ class ProfileCollection extends BaseCollection {
   constructor() {
     super('Profile', new SimpleSchema({
       firstName: { type: String, optional: false },
-      lastName: { type: String, optional: true },
+      lastName: { type: String, optional: false },
       username: { type: String },
       address: { type: String, optional: true },
-      telephone: { type: String, optional: true },
+      telephone: { type: String, optional: false },
       email: { type: String, optional: false },
-      musicaltastes: { type: [String], optional: false },
-      musicalcapabilities: { type: [String], optional: false },
-      musicalgoals: { type: [String], optional: false },
+      tastes: { type: [String], optional: false },
+      capabilities: { type: [String], optional: false },
+      goals: { type: [String], optional: false },
       // picture: { type: SimpleSchema.RegEx.Url, optional: true },
       youtube: { type: SimpleSchema.RegEx.Url, optional: true },
       soundcloud: { type: SimpleSchema.RegEx.Url, optional: true },
@@ -62,15 +62,17 @@ class ProfileCollection extends BaseCollection {
    */
   define({ firstName = '', lastName = '', username = '', address = '', telephone = '', email = '', tastes = '', capabilities ='', goals= '', youtube = '', soundcloud = '' }) {
     // make sure required fields are OK.
-    const checkPattern = { firstName: String, lastName: String, username: String, address: String, telephone: String, email : String, tastes : String, capabilities : String, goals : String, youtube: String, soundcloud: String };
-    check({ firstName, lastName, username, address, telephone, email, tastes, capabilities, goals, youtube, soundcloud }, checkPattern);
+    const checkPattern = { firstName: String, lastName: String, username: String, telephone: String, email : String, tastes : String, capabilities : String, goals : String, youtube: String, soundcloud: String };
+    check({ firstName, lastName, username, address, telephone, email, tastes, capabilities, goals }, checkPattern);
 
     if (this.find({ username }).count() > 0) {
       throw new Meteor.Error(`${username} is previously defined in another Profile`);
     }
 
     // Throw an error if any of the passed Interest names are not defined.
-    Interests.assertNames(interests);
+    Tastes.assertNames(tastes);
+    Capabilities.assertNames(capabilities);
+    Goals.assertNames(goals);
     return this._collection.insert({ firstName, lastName, username, address, telephone, email, tastes, capabilities, goals, youtube, soundcloud});
   }
 
