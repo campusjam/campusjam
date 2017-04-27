@@ -1,6 +1,6 @@
 import { Meteor } from 'meteor/meteor';
-import { Profiles } from '/imports/api/profiles/ProfilesCollection';
-// import { Interests } from '/imports/api/interest/InterestCollection';
+//import { Profiles } from '/imports/api/profiles/ProfilesCollection';
+import { Tastes } from '/imports/api/taste/TasteCollection';
 import { _ } from 'meteor/underscore';
 
 /* global Assets */
