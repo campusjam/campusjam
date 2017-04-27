@@ -19,7 +19,7 @@ Template.If_Authorized.helpers({
   isAuthorized: function isAuthorized() {
     // Only logged in users can see a page protected by this template.
     if (!Meteor.user()) {
-      // console.log('isAuthorized', 'not logged in');
+      console.log('isAuthorized', 'not logged in');
       return false;
     }
 

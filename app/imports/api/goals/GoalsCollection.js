@@ -18,7 +18,6 @@ class GoalCollection extends BaseCollection {
   constructor() {
     super('Goals', new SimpleSchema({
       name: { type: String },
-      description: { type: String, optional: false },
     }));
   }
 
@@ -32,13 +31,12 @@ class GoalCollection extends BaseCollection {
    * @throws {Meteor.Error} If the goal definition includes a defined name.
    * @returns The newly created docID.
    */
-  define({ name, description }) {
+  define({ name}) {
     check(name, String);
-    check(description, String);
     if (this.find({ name }).count() > 0) {
       throw new Meteor.Error(`${name} is a previously defined Goal`);
     }
-    return this._collection.insert({ name, description });
+    return this._collection.insert({ name });
   }
 
   /**
@@ -107,8 +105,7 @@ class GoalCollection extends BaseCollection {
   dumpOne(docID) {
     const doc = this.findDoc(docID);
     const name = doc.name;
-    const description = doc.description;
-    return { name, description };
+    return { name };
   }
 }
 

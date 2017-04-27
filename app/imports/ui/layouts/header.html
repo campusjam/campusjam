@@ -2,7 +2,7 @@
   {{#if canShow}}
     <div style="margin-top: 0; border-radius: 0px;" class="ui borderless inverted menu">
       <div class="ui container">
-        <a class="item" href="{{pathFor 'Home_Page'}}"><h1>Home</h1></a>
+        <a class="item" href="{{pathFor 'Home_Page' username=routeUserName}}"><h1>Home</h1></a>
         <a class="{{ isActiveRoute 'My_Profile_Page'}} item" href="{{ pathFor 'My_Profile_Page' username=routeUserName}}">My Profile</a>
         <a class="{{ isActiveRoute 'Browse_Page'}} item" href="{{ pathFor 'Browse_Page' username=routeUserName}}">Browse Users</a>
         <a class="{{ isActiveRoute 'Create_Event_Page'}} item" href="{{ pathFor 'Create_Event_Page' username=routeUserName}}">Events</a>

@@ -7,8 +7,9 @@ import { Template } from 'meteor/templating';
 import { ReactiveDict } from 'meteor/reactive-dict';
 import { FlowRouter } from 'meteor/kadira:flow-router';
 import { _ } from 'meteor/underscore';
-// import { Profiles } from '/imports/api/profiles/ProfilesCollection';
-// import { Interests } from '/imports/api/interest/InterestCollection';
+import { Profiles } from '/imports/api/profiles/ProfilesCollection';
+// import { Interests } from '/imports/api/interest/InterestsCollection';
+import { Goals } from '/imports/api/goals/GoalsCollection';
 
 const displaySuccessMessage = 'displaySuccessMessage';
 const displayErrorMessages = 'displayErrorMessages';
@@ -16,6 +17,7 @@ const displayErrorMessages = 'displayErrorMessages';
 Template.My_Profile_Page.onCreated(function onCreated() {
   // this.subscribe(Interests.getPublicationName());
   this.subscribe(Profiles.getPublicationName());
+  this.subscribe(Goals.getPublicationName());
   this.messageFlags = new ReactiveDict();
   this.messageFlags.set(displaySuccessMessage, false);
   this.messageFlags.set(displayErrorMessages, false);
@@ -56,14 +58,14 @@ Template.My_Profile_Page.helpers({
   //             return { label: capability.name, selected: _.contains(selectedCapabilities, capability.name) };
   //           });
   // },
-  // goals() {
-  //   const profile = Profiles.findDoc(FlowRouter.getParam('username'));
-  //   const selectedGoals = profile.goals;
-  //   return profile && _.map(Goals.findAll(),
-  //           function makeGoalsObject(taste) {
-  //             return { label: goal.name, selected: _.contains(selectedGoals, goal.name) };
-  //           });
-  // },
+  goals() {
+    const profile = Profiles.findDoc(FlowRouter.getParam('username'));
+    const selectedGoals = profile.goals;
+    return profile && _.map(Goals.findAll(),
+            function makeGoalsObject(taste) {
+              return { label: goal.name, selected: _.contains(selectedGoals, goal.name) };
+            });
+  },
 });
 
 Template.My_Profile_Page.events({
@@ -73,7 +75,7 @@ Template.My_Profile_Page.events({
     const lastName = event.target.Last.value;
     const username = FlowRouter.getParam('username'); // schema requires username.
     const address = event.target.Address.value;
-    const telephone = event.target.Telephone.value;
+    // const telephone = event.target.Telephone.value;
     const email = event.target.Email.value;
     // const tastes = event.target.Tastes.value;
     // const capabilities = event.target.Capabilites.value;
@@ -89,7 +91,7 @@ Template.My_Profile_Page.events({
       lastName,
       username,
       address,
-      telephone,
+      // telephone,
       email,
       // tastes,
       // capabilities,

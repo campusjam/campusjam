@@ -1,58 +1,58 @@
 {
   "comment": "Initial contents for the BowFolios database. For development purposes only.",
   "collections": [
-    {
-      "name": "TastesCollection",
-      "contents": [
-        {
-          "name": "Jazz"
-        },
-        {
-          "name": "Classical"
-        },
-        {
-          "name": "R&B"
-        },
-        {
-          "name": "Rock"
-        },
-        {
-          "name": "Jawaiian"
-        },
-        {
-          "name": "Country"
-        },
-        {
-          "name": "Pop"
-        }
-      ]
-    },
-    {
-      "name": "CapabilitiesCollection",
-      "contents": [
-        {
-          "name": "Piano"
-        },
-        {
-          "name": "Trumpet"
-        },
-        {
-          "name": "Drums"
-        },
-        {
-          "name": "Guitar"
-        },
-        {
-          "name": "Ukulele"
-        },
-        {
-          "name": "Violin"
-        },
-        {
-          "name": "Saxophone"
-        }
-      ]
-    },
+//    {
+//      "name": "TastesCollection",
+//      "contents": [
+//        {
+//          "name": "Jazz"
+//        },
+//        {
+//          "name": "Classical"
+//        },
+//        {
+//          "name": "R&B"
+//        },
+//        {
+//          "name": "Rock"
+//        },
+//        {
+//          "name": "Jawaiian"
+//        },
+//        {
+//          "name": "Country"
+//        },
+//        {
+//          "name": "Pop"
+//        }
+//      ]
+//    },
+//    {
+//      "name": "CapabilitiesCollection",
+//      "contents": [
+//        {
+//          "name": "Piano"
+//        },
+//        {
+//          "name": "Trumpet"
+//        },
+//        {
+//          "name": "Drums"
+//        },
+//        {
+//          "name": "Guitar"
+//        },
+//        {
+//          "name": "Ukulele"
+//        },
+//        {
+//          "name": "Violin"
+//        },
+//        {
+//          "name": "Saxophone"
+//        }
+//      ]
+//    },
     {
       "name": "GoalsCollection",
       "contents": [
@@ -80,12 +80,12 @@
           "address": "2500 Campus Rd. Honolulu, HI 96822",
           "telephone": "808-956-3489",
           "email": "john@hawaii.edu",
-          "tastes": [
-            "Jazz"
-          ],
-          "capabilities": [
-            "Saxophone"
-          ],
+//          "tastes": [
+//            "Jazz"
+//          ],
+//          "capabilities": [
+//            "Saxophone"
+//          ],
           "goals": [
             "Band"
           ],
@@ -99,13 +99,13 @@
           "address": "2550 Campus Rd. Honolulu, HI 96822",
           "telephone": "808-956-3485",
           "email": "jake@hawaii.edu",
-          "tastes": [
-            "Jazz",
-            "Country"
-          ],
-          "capabilities": [
-            "Guitar"
-          ],
+//          "tastes": [
+//            "Jazz",
+//            "Country"
+//          ],
+//          "capabilities": [
+//            "Guitar"
+//          ],
           "goals": [
             "Band",
             "Casual"
@@ -120,13 +120,13 @@
           "address": "2690 Campus Rd. Honolulu, HI 96822",
           "telephone": "808-956-5489",
           "email": "ashley@hawaii.edu",
-          "tastes": [
-            "Jawaiian",
-            "Pop"
-          ],
-          "capabilities": [
-            "Trumpet"
-          ],
+//          "tastes": [
+//            "Jawaiian",
+//            "Pop"
+//          ],
+//          "capabilities": [
+//            "Trumpet"
+//          ],
           "goals": [
             "Band"
           ],
@@ -140,12 +140,12 @@
           "address": "2450 Campus Rd. Honolulu, HI 96822",
           "telephone": "808-956-3488",
           "email": "philip@hawaii.edu",
-          "tastes": [
-            "Jawaiian"
-          ],
-          "capabilities": [
-            "Ukulele"
-          ],
+//          "tastes": [
+//            "Jawaiian"
+//          ],
+//          "capabilities": [
+//            "Ukulele"
+//          ],
           "goals": [
             "Casual"
           ],

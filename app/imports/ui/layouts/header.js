@@ -20,4 +20,8 @@ Template.Header.helpers({
   canShow: function canShow() {
     return !!Meteor.user();
   },
+
+  routeUserName() {
+    return FlowRouter.getParam('username');
+  },
 });

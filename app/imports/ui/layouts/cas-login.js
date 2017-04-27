@@ -1,4 +1,5 @@
 /**
+ *
  * Created by danli on 4/14/2017.
  */
 import { Template } from 'meteor/templating';
@@ -14,7 +15,6 @@ Template.Cas_Login.events({
   'click .cas-logout': function casLogout(event) {
     event.preventDefault();
     Meteor.logout();
-    FlowRouter.go('Landing_Page');
     return false;
   },
 
@@ -28,8 +28,6 @@ Template.Cas_Login.events({
     const callback = function loginCallback(error) {
       if (error) {
         console.log(error);
-      } else {
-        FlowRouter.go('Home_Page');
       }
     };
     Meteor.loginWithCas(callback);
