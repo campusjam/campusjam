@@ -1,16 +1,16 @@
-import { Accounts } from 'meteor/accounts-base';
-import { Profiles } from '/imports/api/profiles/ProfilesCollection';
-
-/* eslint-disable no-console */
-
-/* Create a profile document for this user if none exists already. */
-Accounts.validateNewUser(function validate(user) {
-  if (user) {
-    const username = user.services.cas.id;
-    if (!Profiles.isDefined(username)) {
-      Profiles.define({ username });
-    }
-  }
-  // All UH users are valid for Campusjam.
-  return true;
-});
+// import { Accounts } from 'meteor/accounts-base';
+// // import { Profiles } from '/imports/api/profiles/ProfilesCollection';
+//
+// /* eslint-disable no-console */
+//
+// /* Create a profile document for this user if none exists already. */
+// Accounts.validateNewUser(function validate(user) {
+//   if (user) {
+//     const username = user.services.cas.id;
+//     if (!Profiles.isDefined(username)) {
+//       Profiles.define({ username });
+//     }
+//   }
+//   // All UH users are valid for Campusjam.
+//   return true;
+// });
