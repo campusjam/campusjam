@@ -20,7 +20,7 @@ class BaseCollection {
 
   /**
    * Superclass constructor for all RadGrad entities.
-   * Defines internal fields needed by all entities: _type, _collectionName, _collection, and _schema.
+   * Defines internal fields needed by all entities: _type, _collefctionName, _collection, and _schema.
    * @param {String} type The name of the entity defined by the subclass.
    * @param {SimpleSchema} schema The schema for validating fields on insertion to the DB.
    */

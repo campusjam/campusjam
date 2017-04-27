@@ -2,7 +2,7 @@
   "comment": "Initial contents for the BowFolios database. For development purposes only.",
   "collections": [
     {
-      "name": "TastesCollection",
+      "name": "TasteCollection",
       "contents": [
         {
           "name": "Jazz"

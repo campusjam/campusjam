@@ -4,7 +4,7 @@
  */
 
 import { Tastes } from '/imports/api/taste/TasteCollection';
-//import { Profiles } from '/imports/api/profiles/ProfilesCollection';
+import { Profiles } from '/imports/api/profiles/ProfilesCollection';
 
 Tastes.publish();
 Profiles.publish();

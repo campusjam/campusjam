@@ -5,7 +5,7 @@
 
 import { SimpleSchema } from 'meteor/aldeed:simple-schema';
 import BaseCollection from '/imports/api/base/BaseCollection';
-// import { Interests } from '/imports/api/interest/InterestCollection';
+import { Tastes } from '/imports/api/taste/TasteCollection';
 import { check } from 'meteor/check';
 import { Meteor } from 'meteor/meteor';
 
@@ -29,8 +29,8 @@ class ProfileCollection extends BaseCollection {
       telephone: { type: String, optional: false },
       email: { type: String, optional: false },
       tastes: { type: [String], optional: false },
-      capabilities: { type: [String], optional: false },
-      goals: { type: [String], optional: false },
+      //capabilities: { type: [String], optional: false },
+      //goals: { type: [String], optional: false },
       // picture: { type: SimpleSchema.RegEx.Url, optional: true },
       youtube: { type: SimpleSchema.RegEx.Url, optional: true },
       soundcloud: { type: SimpleSchema.RegEx.Url, optional: true },
@@ -60,10 +60,10 @@ class ProfileCollection extends BaseCollection {
    * if one or more interests are not defined, or if github, facebook, and instagram are not URLs.
    * @returns The newly created docID.
    */
-  define({ firstName = '', lastName = '', username = '', address = '', telephone = '', email = '', tastes = '', capabilities ='', goals= '', youtube = '', soundcloud = '' }) {
+  define({ firstName = '', lastName = '', username = '', address = '', telephone = '', email = '', tastes = '', youtube = '', soundcloud = '' }) {
     // make sure required fields are OK.
-    const checkPattern = { firstName: String, lastName: String, username: String, telephone: String, email : String, tastes : String, capabilities : String, goals : String, youtube: String, soundcloud: String };
-    check({ firstName, lastName, username, address, telephone, email, tastes, capabilities, goals }, checkPattern);
+    const checkPattern = { firstName: String, lastName: String, username: String, telephone: String, email : String, tastes : String, youtube: String, soundcloud: String };
+    check({ firstName, lastName, username, address, telephone, email, tastes }, checkPattern);
 
     if (this.find({ username }).count() > 0) {
       throw new Meteor.Error(`${username} is previously defined in another Profile`);
@@ -71,9 +71,9 @@ class ProfileCollection extends BaseCollection {
 
     // Throw an error if any of the passed Interest names are not defined.
     Tastes.assertNames(tastes);
-    Capabilities.assertNames(capabilities);
-    Goals.assertNames(goals);
-    return this._collection.insert({ firstName, lastName, username, address, telephone, email, tastes, capabilities, goals, youtube, soundcloud});
+    //Capabilities.assertNames(capabilities);
+    //Goals.assertNames(goals);
+    return this._collection.insert({ firstName, lastName, username, address, telephone, email, tastes, youtube, soundcloud});
   }
 
   /**
@@ -90,12 +90,12 @@ class ProfileCollection extends BaseCollection {
     const telephone = doc.telephone;
     const email = doc.email;
     const tastes = doc.tastes;
-    const capabilities = doc.capabilities;
-    const goals = doc.goals;
-    // const picture = doc.picture;
+    //const capabilities = doc.capabilities;
+    //const goals = doc.goals;
+    //const picture = doc.picture;
     const youtube = doc.youtube;
     const soundcloud = doc.soundcloud;
-    return { firstName, lastName, username, address, telephone, email, tastes, capabilities, goals, youtube, soundcloud };
+    return { firstName, lastName, username, address, telephone, email, tastes, youtube, soundcloud };
   }
 }
 

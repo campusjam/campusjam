@@ -1,5 +1,5 @@
 import { Meteor } from 'meteor/meteor';
-//import { Profiles } from '/imports/api/profiles/ProfilesCollection';
+import { Profiles } from '/imports/api/profiles/ProfilesCollection';
 import { Tastes } from '/imports/api/taste/TasteCollection';
 import { _ } from 'meteor/underscore';
 

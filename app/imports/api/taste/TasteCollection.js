@@ -33,20 +33,19 @@ class TasteCollection extends BaseCollection {
    * @throws {Meteor.Error} If the interest definition includes a defined name.
    * @returns The newly created docID.
    */
-  define({ name, description }) {
+  define({ name}) {
     check(name, String);
-    check(description, String);
     if (this.find({ name }).count() > 0) {
       throw new Meteor.Error(`${name} is previously defined in another Taste`);
     }
-    return this._collection.insert({ name, description });
+    return this._collection.insert({ name });
   }
 
   /**
    * Returns the Taste name corresponding to the passed interest docID.
-   * @param interestID An interest docID.
-   * @returns { String } An interest name.
-   * @throws { Meteor.Error} If the interest docID cannot be found.
+   * @param tasteID A taste docID.
+   * @returns { String } An taste name.
+   * @throws { Meteor.Error} If the taste docID cannot be found.
    */
   findName(tasteID) {
     this.assertDefined(tasteID);
