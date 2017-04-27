@@ -27,49 +27,49 @@
         }
       ]
     },
-    {
-      "name": "CapabilitiesCollection",
-      "contents": [
-        {
-          "name": "Piano"
-        },
-        {
-          "name": "Trumpet"
-        },
-        {
-          "name": "Drums"
-        },
-        {
-          "name": "Guitar"
-        },
-        {
-          "name": "Ukulele"
-        },
-        {
-          "name": "Violin"
-        },
-        {
-          "name": "Saxophone"
-        }
-      ]
-    },
-    {
-      "name": "GoalsCollection",
-      "contents": [
-        {
-          "name": "Band"
-        },
-        {
-          "name": "Casual"
-        },
-        {
-          "name": "Learn"
-        },
-        {
-          "name": "Orchestra"
-        }
-      ]
-    },
+//    {
+//      "name": "CapabilitiesCollection",
+//      "contents": [
+//        {
+//          "name": "Piano"
+//        },
+//        {
+//          "name": "Trumpet"
+//        },
+//        {
+//          "name": "Drums"
+//        },
+//        {
+//          "name": "Guitar"
+//        },
+//        {
+//          "name": "Ukulele"
+//        },
+//        {
+//          "name": "Violin"
+//        },
+//        {
+//          "name": "Saxophone"
+//        }
+//      ]
+//    },
+//    {
+//      "name": "GoalsCollection",
+//      "contents": [
+//        {
+//          "name": "Band"
+//        },
+//        {
+//          "name": "Casual"
+//        },
+//        {
+//          "name": "Learn"
+//        },
+//        {
+//          "name": "Orchestra"
+//        }
+//      ]
+//    },
     {
       "name": "ProfileCollection",
       "contents": [
@@ -83,12 +83,12 @@
           "tastes": [
             "Jazz"
           ],
-          "capabilities": [
-            "Saxophone"
-          ],
-          "goals": [
-            "Band"
-          ],
+//          "capabilities": [
+//            "Saxophone"
+//          ],
+//          "goals": [
+//            "Band"
+//          ],
           "youtube" : "youtube.com/johnsmusic",
           "soundcloud" : "soundcloud.com/johnsmusic"
         },
@@ -103,13 +103,13 @@
             "Jazz",
             "Country"
           ],
-          "capabilities": [
-            "Guitar"
-          ],
-          "goals": [
-            "Band",
-            "Casual"
-          ],
+//          "capabilities": [
+//            "Guitar"
+//          ],
+//          "goals": [
+//            "Band",
+//            "Casual"
+//          ],
           "youtube" : "youtube.com/jakesmusic",
           "soundcloud" : "soundcloud.com/jakesmusic"
         },
@@ -124,12 +124,12 @@
             "Jawaiian",
             "Pop"
           ],
-          "capabilities": [
-            "Trumpet"
-          ],
-          "goals": [
-            "Band"
-          ],
+//          "capabilities": [
+//            "Trumpet"
+//          ],
+//          "goals": [
+//            "Band"
+//          ],
           "youtube" : "youtube.com/ashleysmusic",
           "soundcloud" : "soundcloud.com/ashleysmusic"
         },
@@ -143,12 +143,12 @@
           "tastes": [
             "Jawaiian"
           ],
-          "capabilities": [
-            "Ukulele"
-          ],
-          "goals": [
-            "Casual"
-          ],
+//          "capabilities": [
+//            "Ukulele"
+//          ],
+//          "goals": [
+//            "Casual"
+//          ],
           "youtube" : "youtube.com/philipssmusic",
           "soundcloud" : "soundcloud.com/philipsmusic"
         }

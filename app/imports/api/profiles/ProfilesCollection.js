@@ -60,7 +60,7 @@ class ProfileCollection extends BaseCollection {
    * if one or more interests are not defined, or if github, facebook, and instagram are not URLs.
    * @returns The newly created docID.
    */
-  define({ firstName = '', lastName = '', username = '', address = '', telephone = '', email = '', tastes = '', youtube = '', soundcloud = '' }) {
+  define({ firstName = '', lastName = '', username, address = '', telephone = '', email = '', tastes = '', youtube = '', soundcloud = '' }) {
     // make sure required fields are OK.
     const checkPattern = { firstName: String, lastName: String, username: String, telephone: String, email : String, tastes : String, youtube: String, soundcloud: String };
     check({ firstName, lastName, username, address, telephone, email, tastes }, checkPattern);
