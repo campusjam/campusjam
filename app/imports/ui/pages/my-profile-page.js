@@ -7,8 +7,9 @@ import { Template } from 'meteor/templating';
 import { ReactiveDict } from 'meteor/reactive-dict';
 import { FlowRouter } from 'meteor/kadira:flow-router';
 import { _ } from 'meteor/underscore';
-import { Profiles } from '/imports/api/profiles/ProfilesCollection';
+// import { Profiles } from '/imports/api/profiles/ProfilesCollection';
 // import { Interests } from '/imports/api/interest/InterestCollection';
+import { Capabilities } from './imports/api/capability/CapabilityCollection';
 
 const displaySuccessMessage = 'displaySuccessMessage';
 const displayErrorMessages = 'displayErrorMessages';
