@@ -1,87 +1,82 @@
 <template name="My_Profile_Page">
   {{#If_Logged_In}}
-    <div class="ui container">
-      <div class="ui form" style="padding: 20px 50px 20px 50px">
-        <h1 class="ui dividing header" style="margin-bottom: 30px">My Profile</h1>
-        <div class="two fields">
-          <div class="field">
-            <label>First</label>
-            <input type="text" placeholder="John">
-          </div>
-          <div class="field">
-            <label>Last</label>
-            <input type="text" placeholder="Doe">
-          </div>
-        </div>
+    {{#if Template.subscriptionsReady}}
+      <div class="ui container">
+        <div class="ui form" style="padding: 20px 50px 20px 50px">
+          <h1 class="ui dividing header" style="margin-bottom: 30px">My Profile</h1>
 
-        <div class="field">
-          <label>Address</label>
-          <input type="text" placeholder="2500 Campus Rd. Honolulu, HI 96822">
-        </div>
-
-        <div class="two fields">
-          <div class="field">
-            <label>Telephone</label>
-            <input type="text" placeholder="XXX-XXX-XXXX">
-          </div>
-          <div class="field">
-            <label>Email</label>
-            <input type="text" placeholder="johndoe@hawaii.edu">
-          </div>
-        </div>
-
-        <div class="ui sub header">Musical Tastes</div>
-        <select multiple="" name="music" class="ui fluid normal dropdown">
-          <option value="">Tastes</option>
-          <option value="jazz">Jazz</option>
-          <option value="classical">Classical</option>
-          <option value="randb">R&B</option>
-          <option value="rock">Rock</option>
-          <option value="other">Other</option>
-        </select>
-
-        <div class="ui sub header">Musical Capabilities</div>
-        <select multiple="" name="capabilities" class="ui fluid normal dropdown">
-          <option value="">Capabilities</option>
-          <option value="piano">Piano</option>
-          <option value="trumpet">Trumpet</option>
-          <option value="drums">Drums</option>
-          <option value="guitar">Guitar</option>
-          <option value="other">Other</option>
-        </select>
-
-        <div class="ui sub header">Musical Goals</div>
-        <select multiple="" name="goals" class="ui fluid normal dropdown">
-          <option value="">Goals</option>
-          <option value="band">Play in a band</option>
-          <option value="casual">Casual playing</option>
-          <option value="learn">Learn to play an instrument</option>
-          <option value="band">Play in a band</option>
-          <option value="other">Other</option>
-        </select>
-
-        <div class="two fields" style="padding-top: 20px">
-          <div class="field">
-            <label>YouTube</label>
-            <div class="ui left icon input">
-              <input type="text" placeholder="YouTube URL or N/A if none">
-              <i class="youtube icon"></i>
+          <form class="ui equal width form profile-data-form {{ successClass }} {{ errorClass }}">
+            <div class="fields">
+              <div class="field">
+                {{> Text_Form_Control label="First" required = true placeholder="Philip" value=profile.firstName errorMessage=(fieldError "firstName")}}
+              </div>
+              <div class="field">
+                {{> Text_Form_Control label="Last" required = true placeholder="Johnson" value=profile.lastName errorMessage=(fieldError "lastName")}}
+              </div>
             </div>
-          </div>
 
-          <div class="field">
-            <label>SoundCloud</label>
-            <div class="ui left icon input">
-              <input type="text" placeholder="SoundCloud URL or N/A if none">
-              <i class="soundcloud icon"></i>
+            <div class="field">
+              {{> Text_Form_Control label="Address" placeholder="2500 Campus Rd. Honolulu, HI 96822" value=profile.address errorMessage=(fieldError "address")}}
             </div>
-          </div>
+
+            <div class="field">
+              <div class="two fields">
+                {{> Text_Form_Control label="Telephone" required=true value=profile.telephone errorMessage="Phone number must be a 10 digit number with dashes."}}
+                {{> Text_Form_Control label="Email" required=true value=profile.email errorMessage=(fieldError "email")}}
+              </div>
+            </div>
+
+            <!--<div class="field">-->
+            {{> Select_Form_Control label="Tastes" required = true options=tastes errorMessage=(fieldError "tastes") multiple=true }}
+            <!--</div>-->
+            <!--&lt;!&ndash;<select multiple="" name="music" class="ui fluid normal dropdown">&ndash;&gt;-->
+            <!--&lt;!&ndash;<option value="">Tastes</option>&ndash;&gt;-->
+            <!--&lt;!&ndash;<option value="jazz">Jazz</option>&ndash;&gt;-->
+            <!--&lt;!&ndash;<option value="classical">Classical</option>&ndash;&gt;-->
+            <!--&lt;!&ndash;<option value="randb">R&B</option>&ndash;&gt;-->
+            <!--&lt;!&ndash;<option value="rock">Rock</option>&ndash;&gt;-->
+            <!--&lt;!&ndash;<option value="other">Other</option>&ndash;&gt;-->
+            <!--&lt;!&ndash;</select>&ndash;&gt;-->
+
+            <!--<div class="field">-->
+            {{> Select_Form_Control label="Capabilities" required = true options=capabilities errorMessage=(fieldError "capabilities") multiple=true }}
+            <!--</div>-->
+            <!--&lt;!&ndash;<option value="">Capabilities</option>&ndash;&gt;-->
+            <!--&lt;!&ndash;<option value="piano">Piano</option>&ndash;&gt;-->
+            <!--&lt;!&ndash;<option value="trumpet">Trumpet</option>&ndash;&gt;-->
+            <!--&lt;!&ndash;<option value="drums">Drums</option>&ndash;&gt;-->
+            <!--&lt;!&ndash;<option value="guitar">Guitar</option>&ndash;&gt;-->
+            <!--&lt;!&ndash;<option value="other">Other</option>&ndash;&gt;-->
+
+            <!--<div class="field">-->
+            {{> Select_Form_Control label="Goals" required = true options=goals errorMessage=(fieldError "goals") multiple=true }}
+            <!--</div>-->
+            <!--&lt;!&ndash;<option value="">Goals</option>&ndash;&gt;-->
+            <!--&lt;!&ndash;<option value="band">Play in a band</option>&ndash;&gt;-->
+            <!--&lt;!&ndash;<option value="casual">Casual playing</option>&ndash;&gt;-->
+            <!--&lt;!&ndash;<option value="learn">Learn to play an instrument</option>&ndash;&gt;-->
+            <!--&lt;!&ndash;<option value="band">Play in a band</option>&ndash;&gt;-->
+            <!--&lt;!&ndash;<option value="other">Other</option>&ndash;&gt;-->
+
+
+            <div class="field">
+              <div class="two fields">
+                {{> Social_Network_Form_Control label="YouTube" icon="youtube" placeholder="YouTube URL" value=profile.youtube errorMessage=(fieldError "youtube")}}
+                {{> Social_Network_Form_Control label="SoundCloud" icon="soundcloud" placeholder="pmjohnson" value=profile.soundcloud errorMessage=(fieldError "SoundCloud URL")}}
+              </div>
+            </div>
+
+            <button class="ui blue success button" style="margin-top: 20px" type="submit">Update</button>
+            {{#if displaySuccessMessage}}
+              <div class="ui success message">
+                <p>Profile data successfully updated.</p>
+              </div>
+            {{/if}}
+
+          </form>
         </div>
-
-        <button class="ui button" style="margin-top: 20px" type="submit">Update</button>
-
       </div>
-    </div>
+    {{/if}}
   {{/If_Logged_In}}
 
   <script>
