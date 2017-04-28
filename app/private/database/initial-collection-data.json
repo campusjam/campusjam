@@ -2,7 +2,7 @@
   "comment": "Initial contents for the BowFolios database. For development purposes only.",
   "collections": [
 //    {
-//      "name": "TastesCollection",
+//      "name": "TasteCollection",
 //      "contents": [
 //        {
 //          "name": "Jazz"
@@ -28,7 +28,7 @@
 //      ]
 //    },
 //    {
-//      "name": "CapabilitiesCollection",
+//      "name": "CapabilityCollection",
 //      "contents": [
 //        {
 //          "name": "Piano"
@@ -54,7 +54,7 @@
 //      ]
 //    },
     {
-      "name": "GoalsCollection",
+      "name": "GoalCollection",
       "contents": [
         {
           "name": "Band"
@@ -151,6 +151,26 @@
           ],
           "youtube" : "youtube.com/philipssmusic",
           "soundcloud" : "soundcloud.com/philipsmusic"
+        },
+        {
+          "firstName": "Dan",
+          "lastName": "Li",
+          "username": "danli",
+          "address": "2690 Campus Rd. Honolulu, HI 96822",
+          "telephone": "808-956-5489",
+          "email": "danli@hawaii.edu",
+          //          "tastes": [
+          //            "Jawaiian",
+          //            "Pop"
+          //          ],
+          //          "capabilities": [
+          //            "Trumpet"
+          //          ],
+          "goals": [
+            "Learn"
+          ],
+          "youtube" : "youtube.com/dansmusic",
+          "soundcloud" : "soundcloud.com/dansmusic"
         }
       ]
     }
