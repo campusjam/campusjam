@@ -23,7 +23,7 @@ Template.Cas_Login.events({
    * @param event The click event.
    * @returns {boolean} False.
    */
-  'click .cas-login': function casLogin(event, instance) {
+  'click .cas-login': function casLogin(event) {
     event.preventDefault();
     const callback = function loginCallback(error) {
       if (error) {
