@@ -61,10 +61,17 @@ class ProfileCollection extends BaseCollection {
    * if one or more interests are not defined, or if github, facebook, and instagram are not URLs.
    * @returns The newly created docID.
    */
-  define({ firstName = '', lastName = '', username, address = '', telephone = '', email = '', /* tastes = '', capabilities ='',*/ goals= '', youtube = '', soundcloud = '' }) {
+  define({ firstName = '', lastName = '', username, address = '', telephone = '', email = '', /* tastes = '', capabilities ='',*/ goals, youtube = '', soundcloud = '' }) {
     // make sure required fields are OK.
-    const checkPattern = { firstName: String, lastName: String, username: String, telephone: String, email : String, /* tastes : String, capabilities : String,*/ goals : String, youtube: String, soundcloud: String };
-    check({ firstName, lastName, username, address, telephone, email, /*tastes, capabilities,*/ goals }, checkPattern);
+    const checkPattern = {
+      firstName: String,
+      lastName: String,
+      username: String,
+      address: String,
+      telephone: String,
+      email: String, /* tastes : String, capabilities : String,*/
+    };
+    check({ firstName, lastName, username, address, telephone, email }, checkPattern);
 
     if (this.find({ username }).count() > 0) {
       throw new Meteor.Error(`${username} is previously defined in another Profile`);
@@ -74,7 +81,17 @@ class ProfileCollection extends BaseCollection {
     // Tastes.assertNames(tastes);
     // Capabilities.assertNames(capabilities);
     Goals.assertNames(goals);
-    return this._collection.insert({ firstName, lastName, username, address, telephone, email, /* tastes, capabilities,*/ goals, youtube, soundcloud});
+    return this._collection.insert({
+      firstName,
+      lastName,
+      username,
+      address,
+      telephone,
+      email, /* tastes, capabilities,*/
+      goals,
+      youtube,
+      soundcloud
+    });
   }
 
   /**
@@ -96,7 +113,17 @@ class ProfileCollection extends BaseCollection {
     // const picture = doc.picture;
     const youtube = doc.youtube;
     const soundcloud = doc.soundcloud;
-    return { firstName, lastName, username, address, telephone, email, /* tastes, capabilities,*/ goals, youtube, soundcloud };
+    return {
+      firstName,
+      lastName,
+      username,
+      address,
+      telephone,
+      email, /* tastes, capabilities,*/
+      goals,
+      youtube,
+      soundcloud
+    };
   }
 }
 

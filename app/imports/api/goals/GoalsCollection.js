@@ -31,9 +31,9 @@ class GoalCollection extends BaseCollection {
    * @throws {Meteor.Error} If the goal definition includes a defined name.
    * @returns The newly created docID.
    */
-  define({ name}) {
+  define({ name }) {
     check(name, String);
-    if (this.find({ name }).count() > 0) {
+    if (this.find({ name }).count() > 1) {
       throw new Meteor.Error(`${name} is a previously defined Goal`);
     }
     return this._collection.insert({ name });
