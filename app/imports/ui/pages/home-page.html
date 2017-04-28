@@ -1,8 +1,10 @@
 <template name="Home_Page">
   {{#If_Logged_In}}
     <div class="ui grid container" style="margin-top: 20px">
+
       <div class="six wide column">
-        <h1>My Profile</h1>
+        <h1 style="color: teal">My Profile</h1>
+        <a href="my-profile"><i class="ui big teal edit icon"></i></a>
         <div class="ui card">
           <div class="image">
             <img src="/images/hongbo.jpg">
@@ -29,18 +31,78 @@
             </div>
           </div>
         </div>
-      </div>
-
-      <div class="nine wide column">
-        <h2 class="ui block header">
-          <i class="users icon"></i>
+        <h2 class="ui teal block header">
+          <i class="calendar icon"></i>
           <div class="content">
-            Recommended Users
-            <div class="sub header">People with same interest or capabilities.</div>
+            My Events
+            <div class="sub header" style="color: teal">The Events You Created</div>
           </div>
         </h2>
 
-        <div class="ui cards">
+        <div class="ui cards" style="margin-left: 10px;">
+          <div class="card">
+            <div class="content">
+              <div class="header">
+                UHM Night Concert
+              </div>
+              <div class="meta">
+                From October 17, 2017 at 6:00PM
+                to October 17, 2017 at 8:00PM
+                at Kennedy Theatre
+              </div>
+              <div class="description">
+                Come!
+              </div>
+              <div style="margin-top: 10px">
+                <a style="margin-bottom: 2px" class="ui teal tag small label">Classical</a>
+                <a style="margin-bottom: 2px" class="ui teal tag small label">Band</a>
+              </div>
+            </div>
+            <div class="extra content">
+              <div class="ui two buttons">
+                <div class="ui basic green button">Join Us</div>
+                <div class="ui basic green button">Contact Us</div>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="content">
+              <div class="header">
+                UHM Night Concert
+              </div>
+              <div class="meta">
+                From October 17, 2017 at 6:00PM
+                to October 17, 2017 at 8:00PM
+                at Kennedy Theatre
+              </div>
+              <div class="description">
+                Come!
+              </div>
+              <div style="margin-top: 10px">
+                <a style="margin-bottom: 2px" class="ui teal tag small label">Classical</a>
+                <a style="margin-bottom: 2px" class="ui teal tag small label">Band</a>
+              </div>
+            </div>
+            <div class="extra content">
+              <div class="ui two buttons">
+                <div class="ui basic green button">Join Us</div>
+                <div class="ui basic green button">Contact Us</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="five wide column" style="padding-top: 60px">
+        <h2 class="ui teal block header">
+          <i class="users icon"></i>
+          <div class="content">
+            Recommended Users
+            <div class="sub header" style="color: teal">People with same interest or capabilities.</div>
+          </div>
+        </h2>
+
+        <div class="ui cards" style="margin-left: 10px;">
           <div class="card">
             <div class="content">
               <img class="right floated mini ui image" src="/images/matthew.png">
@@ -146,16 +208,17 @@
             </div>
           </div>
         </div>
-
-        <h2 class="ui block header">
+      </div>
+      <div class="five wide column" style="padding-top: 60px">
+        <h2 class="ui teal block header">
           <i class="calendar icon"></i>
           <div class="content">
             Upcoming Event
-            <div class="sub header">New events that you might be interested in</div>
+            <div class="sub header" style="color: teal">New events that you might be interested in</div>
           </div>
         </h2>
 
-        <div class="ui cards">
+        <div class="ui cards" style="margin-left: 10px;">
           <div class="card">
             <div class="content">
               <div class="header">
