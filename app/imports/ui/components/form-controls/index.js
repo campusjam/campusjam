@@ -10,3 +10,4 @@ import './select-form-control.html';
 import './select-form-control';
 import './text-form-control.html';
 import './textarea-form-control.html';
+import './social-network-form-control.html';
