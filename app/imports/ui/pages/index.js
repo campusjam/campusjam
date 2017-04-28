@@ -16,5 +16,6 @@ import './my-profile-page.html';
 // import './my-profile-page.js';
 
 import './create-event-page.html';
+// import './create-event-page.js';
 
 import './browse-page.html';
