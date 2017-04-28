@@ -16,10 +16,6 @@
             </div>
 
             <div class="field">
-              {{> Text_Form_Control label="Username" required = true placeholder="johnson" value=profile.username errorMessage=(fieldError "username")}}
-            </div>
-
-            <div class="field">
               {{> Text_Form_Control label="Address" placeholder="2500 Campus Rd. Honolulu, HI 96822" value=profile.address errorMessage=(fieldError "address")}}
             </div>
 
@@ -53,7 +49,7 @@
             <!--&lt;!&ndash;<option value="other">Other</option>&ndash;&gt;-->
 
             <!--<div class="field">-->
-              {{> Select_Form_Control label="Goals" required = true options=goals errorMessage=(fieldError "goals") multiple=true }}
+              <!--{{> Select_Form_Control label="Goals" required = true options=goals errorMessage=(fieldError "goals") multiple=true }}-->
             <!--</div>-->
             <!--&lt;!&ndash;<option value="">Goals</option>&ndash;&gt;-->
             <!--&lt;!&ndash;<option value="band">Play in a band</option>&ndash;&gt;-->
@@ -71,6 +67,11 @@
             </div>
 
             <button class="ui blue success button" style="margin-top: 20px" type="submit">Update</button>
+            {{#if displaySuccessMessage}}
+              <div class="ui success message">
+                <p>Profile data successfully updated.</p>
+              </div>
+            {{/if}}
 
           </form>
         </div>

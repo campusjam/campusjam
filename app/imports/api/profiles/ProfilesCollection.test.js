@@ -13,7 +13,6 @@ if (Meteor.isServer) {
     const goalsName = 'Star';
     const firstName = 'Philip';
     const lastName = 'Johnson';
-    const username = 'johnson';
     const address = '2500 Campus Rd. Honolulu, HI 96822';
     const telephone = '080-956-3489';
     const email = 'johnson@hawaii.edu';
@@ -40,7 +39,6 @@ if (Meteor.isServer) {
       const doc = Profiles.findDoc(docID);
       expect(doc.firstName).to.equal(firstName);
       expect(doc.lastName).to.equal(lastName);
-      expect(doc.username).to.equal(username);
       expect(doc.address).to.equal(address);
       expect(doc.telephone).to.equal(telephone);
       expect(doc.email).to.equal(email);

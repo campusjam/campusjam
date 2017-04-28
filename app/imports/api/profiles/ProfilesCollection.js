@@ -9,6 +9,8 @@ import BaseCollection from '/imports/api/base/BaseCollection';
 import { Goals } from '/imports/api/goals/GoalsCollection';
 import { check } from 'meteor/check';
 import { Meteor } from 'meteor/meteor';
+import { Accounts } from 'meteor/accounts-base';
+
 
 /** @module Profile */
 
@@ -64,25 +66,25 @@ class ProfileCollection extends BaseCollection {
   define({ firstName = '', lastName = '', username, address = '', telephone = '', email = '', /* tastes = '', capabilities ='',*/ goals, youtube = '', soundcloud = '' }) {
     // make sure required fields are OK.
     const checkPattern = {
-      username: String,
+      // username: String,
       firstName: String,
       lastName: String,
       address: String,
       telephone: String,
       email: String, /* tastes : String, capabilities : String,*/
     };
-    check({ username, firstName, lastName, address, telephone, email }, checkPattern);
+    check({ firstName, lastName, address, telephone, email }, checkPattern);
 
-    if (this.find({ username }).count() > 0) {
-      throw new Meteor.Error(`${username} is previously defined in another Profile`);
-    }
+    // if (this.find({ username }).count() > 0) {
+    //   throw new Meteor.Error(`${username} is previously defined in another Profile`);
+    // }
 
     // Throw an error if any of the passed Interest names are not defined.
     // Tastes.assertNames(tastes);
     // Capabilities.assertNames(capabilities);
     Goals.assertNames(goals);
     return this._collection.insert({
-      username,
+      // username,
       firstName,
       lastName,
       address,
@@ -103,7 +105,7 @@ class ProfileCollection extends BaseCollection {
     const doc = this.findDoc(docID);
     const firstName = doc.firstName;
     const lastName = doc.lastName;
-    const username = doc.username;
+    // const username = doc.username;
     const address = doc.address;
     const telephone = doc.telephone;
     const email = doc.email;
@@ -116,7 +118,7 @@ class ProfileCollection extends BaseCollection {
     return {
       firstName,
       lastName,
-      username,
+      // username,
       address,
       telephone,
       email, /* tastes, capabilities,*/

@@ -40,7 +40,7 @@ Template.My_Profile_Page.helpers({
     return errorObject && Template.instance().context.keyErrorMessage(errorObject.name);
   },
   profile() {
-    return Profiles.findDoc(FlowRouter.getParam('username'));
+    return Meteor.userId();
   },
   // tastes() {
   //   const profile = Profiles.findDoc(FlowRouter.getParam('username'));
@@ -59,7 +59,7 @@ Template.My_Profile_Page.helpers({
   //           });
   // },
   goals() {
-    const profile = Profiles.findDoc(FlowRouter.getParam('username'));
+    const profile = Meteor.userId();
     const selectedGoals = profile.goals;
     return profile && _.map(Goals.findAll(),
             function makeGoalsObject(taste) {
@@ -73,7 +73,7 @@ Template.My_Profile_Page.events({
     event.preventDefault();
     const firstName = event.target.First.value;
     const lastName = event.target.Last.value;
-    const username = FlowRouter.getParam('username'); // schema requires username.
+    // const username = Meteor.userId(); // schema requires username.
     const address = event.target.Address.value;
     // const telephone = event.target.Telephone.value;
     const email = event.target.Email.value;
@@ -89,7 +89,7 @@ Template.My_Profile_Page.events({
     const updatedProfileData = {
       firstName,
       lastName,
-      username,
+      // username,
       address,
       // telephone,
       email,
@@ -109,7 +109,7 @@ Template.My_Profile_Page.events({
     instance.context.validate(updatedProfileData);
 
     if (instance.context.isValid()) {
-      const docID = Profiles.findDoc(FlowRouter.getParam('username'))._id;
+      const docID = Meteor.userId();
       const id = Profiles.update(docID, { $set: updatedProfileData });
       instance.messageFlags.set(displaySuccessMessage, id);
       instance.messageFlags.set(displayErrorMessages, false);
