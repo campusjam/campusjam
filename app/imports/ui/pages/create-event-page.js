@@ -8,6 +8,11 @@ import { Interests } from '/imports/api/interest/InterestCollection';
 const displaySuccessMessage = 'displaySuccessMessage';
 const displayErrorMessages = 'displayErrorMessages';
 
+export const timeList = ['0:00 AM', '1:00 AM', '2:00 AM', '3:00 AM', '4:00 AM',
+  '5:00 AM', '6:00 AM', '7:00 AM', '8:00 AM', '9:00 AM', '10:00 AM', '11:00 AM',
+  '12:00 PM', '13:00 PM', '14:00 PM', '15:00 PM', '16:00 PM', '17:00 PM', '18:00 PM',
+  '19:00 PM', '20:00 PM', '21:00 PM', '22:00 PM', '23:00 PM'];
+
 Template.Profile_Page.onCreated(function onCreated() {
   this.subscribe(Interests.getPublicationName());
   this.subscribe(Events.getPublicationName());
@@ -31,6 +36,9 @@ Template.Profile_Page.helpers({
     const invalidKeys = Template.instance().context.invalidKeys();
     const errorObject = _.find(invalidKeys, (keyObj) => keyObj.name === fieldName);
     return errorObject && Template.instance().context.keyErrorMessage(errorObject.name);
+  },
+  times() {
+    return _.map(timeList, function makeTimeObject(time) { return { label: time }; });
   },
   profile() {
     return Events.findDoc(FlowRouter.getParam('username'));

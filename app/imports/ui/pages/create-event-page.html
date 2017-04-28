@@ -21,11 +21,11 @@
       <div class="field">
         <div class="two fields">
           <div class="field">
-            {{> Select_Form_Control label="StartTime" errorMessage=(fieldError "interests") multiple=false }}
+            {{> Select_Form_Control label="StartTime" options=times errorMessage=(fieldError "times") multiple=false }}
           </div>
 
           <div class="field">
-            {{> Select_Form_Control label="EndTime" errorMessage=(fieldError "interests") multiple=false }}
+            {{> Select_Form_Control label="EndTime" options=times errorMessage=(fieldError "times") multiple=false }}
           </div>
         </div>
       </div>
