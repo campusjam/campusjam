@@ -109,7 +109,8 @@
 //     instance.context.validate(updatedProfileData);
 //
 //     if (instance.context.isValid()) {
-//       const docID = Profiles.findDoc(FlowRouter.getParam('username'))._id;      const id = Profiles.update(docID, { $set: updatedProfileData });
+//       const docID = Profiles.findDoc(FlowRouter.getParam('username'))._id;
+//       const id = Profiles.update(docID, { $set: updatedProfileData });
 //       instance.messageFlags.set(displaySuccessMessage, id);
 //       instance.messageFlags.set(displayErrorMessages, false);
 //     } else {
