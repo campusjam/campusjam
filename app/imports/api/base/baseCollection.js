@@ -1,8 +1,3 @@
-/**
- *
- * Created by danli on 4/18/2017.
- */
-
 import { Mongo } from 'meteor/mongo';
 import { Meteor } from 'meteor/meteor';
 import { check } from 'meteor/check';
@@ -11,7 +6,7 @@ import { _ } from 'meteor/underscore';
 /** @module Base */
 
 /**
- * BaseCollection is an abstract superclass of all Campusjam data model entities.
+ * BaseCollection is an abstract superclass of all RadGrad data model entities.
  * It is the direct superclass for SlugCollection and SemesterCollection.
  * Other collection classes are derived from BaseInstanceCollection or BaseTypeCollection, which are abstract
  * classes that inherit from this one.
