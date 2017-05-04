@@ -2,6 +2,87 @@
   "comment": "Initial contents for the BowFolios database. For development purposes only.",
   "collections": [
     {
+      "name": "CapabilityCollection",
+      "contents": [
+        {
+          "name": "Software Engineering",
+          "description": "Techniques for development of high quality systems"
+        },
+        {
+          "name": "Algorithms",
+          "description": "A set of rules to be followed in computation"
+        },
+        {
+          "name": "Mobile Networks",
+          "description": "Networks created using mobile devices."
+        },
+        {
+          "name": "Sailing",
+          "description": ""
+        },
+        {
+          "name": "Mars",
+          "description": ""
+        },
+        {
+          "name": "Imu Cooking",
+          "description": "Hawaiian practice of cooking in a pit."
+        },
+        {
+          "name": "Scuba",
+          "description": ""
+        },
+        {
+          "name": "Photography",
+          "description": ""
+        },
+        {
+          "name": "Wind surfing",
+          "description": ""
+        },
+        {
+          "name": "Psychology",
+          "description": ""
+        },
+        {
+          "name": "Motorcycling",
+          "description": ""
+        },
+        {
+          "name": "Accreditation",
+          "description": ""
+        },
+        {
+          "name": "Paddling",
+          "description": ""
+        },
+        {
+          "name": "Crossfit",
+          "description": ""
+        },
+        {
+          "name": "Cybersecurity",
+          "description": ""
+        },
+        {
+          "name": "Surfing",
+          "description": ""
+        },
+        {
+          "name": "Computer Vision",
+          "description": ""
+        },
+        {
+          "name": "Martial Arts",
+          "description": ""
+        },
+        {
+          "name": "Evolutionary Computation",
+          "description": ""
+        }
+      ]
+    },
+    {
       "name": "InterestCollection",
       "contents": [
         {
@@ -93,6 +174,9 @@
           "interests": [
             "Evolutionary Computation"
           ],
+          "capabilities": [
+            "Evolutionary Computation"
+          ],
           "title": "Associate Professor, Information and Computer Sciences",
           "picture": "/images/altenberg.jpg"
         },
@@ -103,6 +187,9 @@
           "bio": "I am an Associate Professor of Information and Computer Sciences at the University of Hawaii.",
           "interests": [
             "Computer Vision"
+          ],
+          "capabilities": [
+            "Evolutionary Computation"
           ],
           "title": "Associate Professor, Information and Computer Sciences",
           "picture": "/images/baek.jpg"
@@ -115,6 +202,9 @@
           "interests": [
             "Mobile Networks",
             "Sailing"
+          ],
+          "capabilities": [
+            "Evolutionary Computation"
           ],
           "title": "Associate Professor, Information and Computer Sciences",
           "picture": "/images/biagioni.jpg"

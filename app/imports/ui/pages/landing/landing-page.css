@@ -1,35 +1,33 @@
-.landing-section-5 {
-  padding: 20px 10px 20px 10px;
-  background-color: #03704D;
-  color: #E0EFEA;
-}
-
 .landing-section-1 {
-  padding: 0px 10px 30px 10px;
-  background-color: #03704D;
-  color: #E0EFEA;
-  font-family: 'Oswald', sans-serif;
+  padding: 10px 10px 30px 10px;
+  background-color: #00B5AD;
+  color: #E5F9E7;
 }
 
 .landing-section-2 {
   padding: 20px 10px 20px 10px;
-  background-color: #E0EFEA;
-  color:  #03704D;
+  background-color: #E5F9E7;
+  color:  #00B5AD;
 }
 
 .landing-section-3 {
   padding: 20px 10px 30px 30px;
-  background-color: #03704D;
-  color: #E0EFEA;
+  background-color: #00B5AD;
+  color: #E5F9E7;
 }
+
+.landing-section-5 {
+  padding: 20px 10px 20px 10px;
+  background-color: #00B5AD;
+  color: #E5F9E7;
+}
+
 
 .landing-section-1-welcome {
   font-family: 'Roboto', sans-serif;
   font-weight: 900;
   font-size: 72px;
 }
-
-
 
 .landing-section-header {
   font-family: 'Roboto', sans-serif;

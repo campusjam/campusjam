@@ -11,6 +11,7 @@
       <div class="fields">
         {{> Text_Form_Control label="First" placeholder="Philip" value=profile.firstName errorMessage=(fieldError "firstName")}}
         {{> Text_Form_Control label="Last" placeholder="Johnson" value=profile.lastName errorMessage=(fieldError "lastName")}}
+
       </div>
 
       <div class="field">
@@ -20,6 +21,9 @@
 
       <div class="field">
         {{> Select_Form_Control label="Interests" options=interests errorMessage=(fieldError "interests") multiple=true }}
+      </div>
+      <div class="field">
+        {{> Select_Form_Control label="Capabilities" options=capabilities errorMessage=(fieldError "capabilities") multiple=true }}
       </div>
 
       <div class="fields">
