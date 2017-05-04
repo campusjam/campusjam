@@ -1,0 +1,1 @@
+import './event-page.html';

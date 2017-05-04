@@ -1,0 +1,13 @@
+<template name="Directory_Page">
+  {{#if Template.subscriptionsReady}}
+    <div style="margin-top: 10px" class="ui container">
+      <div class="ui cards">
+
+        {{#each profile in profiles }}
+          {{> Directory_Profile profile=profile }}
+        {{/each}}
+
+      </div>
+    </div>
+  {{/if}}
+</template>
