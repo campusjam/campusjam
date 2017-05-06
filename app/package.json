@@ -5,7 +5,8 @@
     "start": "meteor --no-release-check --settings ../config/settings.development.json",
     "lint": "eslint ./imports",
     "jsdoc": "./node_modules/.bin/jsdoc -c ./jsdoc.json -r .",
-    "test-watch": "meteor test --driver-package practicalmeteor:mocha --port 3100"
+    "test-watch": "meteor test --driver-package practicalmeteor:mocha --port 3100",
+    "deploy": "meteor deploy campusjam.meteorapp.com --owner ics314s17 --settings ../config/settings.json"
   },
   "dependencies": {
     "babel-runtime": "^6.18.0",
