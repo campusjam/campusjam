@@ -3,6 +3,7 @@
 
 import { Profiles } from '/imports/api/profile/ProfileCollection';
 import { Interests } from '/imports/api/interest/InterestCollection';
+import { Goals } from '/imports/api/goal/GoalCollection';
 import { Meteor } from 'meteor/meteor';
 import { expect } from 'chai';
 import { removeAllEntities } from '/imports/api/base/BaseUtilities';
@@ -10,23 +11,27 @@ import { removeAllEntities } from '/imports/api/base/BaseUtilities';
 if (Meteor.isServer) {
   describe('ProfileCollection', function testSuite() {
     const interestName = 'Software Engineering';
+    const goalName = 'Engineering';
     const interestDescription = 'Tools for software development';
     const firstName = 'Philip';
     const lastName = 'Johnson';
     const username = 'johnson';
     const bio = 'I have been a professor of computer science at UH since 1990.';
     const interests = [interestName];
+    const goals = [goalName];
     const picture = 'http://philipmjohnson.org/headshot.jpg';
     const title = 'Professor Computer Science';
     const github = 'http://github.com/philipjohnson';
     const facebook = 'http://github.com/philipjohnson';
     const instagram = 'http://github.com/philipjohnson';
-    const defineObject = { firstName, lastName, username, bio, interests, picture, title, github, facebook, instagram };
+    const defineObject = { firstName, lastName, username, bio, interests, goals, picture, title, github, facebook,
+      instagram };
 
     before(function setup() {
       removeAllEntities();
       // Define a sample interest.
       Interests.define({ name: interestName, description: interestDescription });
+      Goals.define({ name: goalName });
     });
 
     after(function teardown() {
@@ -43,6 +48,7 @@ if (Meteor.isServer) {
       expect(doc.username).to.equal(username);
       expect(doc.bio).to.equal(bio);
       expect(doc.interests[0]).to.equal(interestName);
+      expect(doc.goals[0]).to.equal(goalName);
       expect(doc.picture).to.equal(picture);
       expect(doc.title).to.equal(title);
       expect(doc.github).to.equal(github);

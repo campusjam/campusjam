@@ -83,6 +83,23 @@
       ]
     },
     {
+      "name": "GoalCollection",
+      "contents": [
+        {
+          "name": "Band"
+        },
+        {
+          "name": "Learn"
+        },
+        {
+          "name": "Casual"
+        },
+        {
+          "name": "Pro"
+        }
+      ]
+    },
+    {
       "name": "ProfileCollection",
       "contents": [
         {
@@ -92,6 +109,9 @@
           "bio": "I am an Associate Professor of Information and Computer Sciences at the University of Hawaii.",
           "interests": [
             "Evolutionary Computation"
+          ],
+          "goals": [
+            "Pro"
           ],
           "title": "Associate Professor, Information and Computer Sciences",
           "picture": "/images/altenberg.jpg"
@@ -104,6 +124,9 @@
           "interests": [
             "Computer Vision"
           ],
+          "goals": [
+            "Learn"
+          ],
           "title": "Associate Professor, Information and Computer Sciences",
           "picture": "/images/baek.jpg"
         },
@@ -115,6 +138,10 @@
           "interests": [
             "Mobile Networks",
             "Sailing"
+          ],
+          "goals": [
+            "Casual",
+            "Learn"
           ],
           "title": "Associate Professor, Information and Computer Sciences",
           "picture": "/images/biagioni.jpg"
@@ -140,6 +167,10 @@
           "interests": [
             "Surfing",
             "Photography"
+          ],
+          "goals": [
+            "Learn",
+            "Pro"
           ],
           "title": "Professor, Information and Computer Sciences",
           "picture": "/images/casanova.jpg"

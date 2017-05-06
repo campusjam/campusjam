@@ -1,0 +1,12 @@
+<template name="Goals_Form_Field">
+  <div class="{{#if required}}required{{/if}} field">
+    <label>Goal(s)</label>
+    <select multiple="" class="ui dropdown" name="goals">
+      <option value="">Select Goal(s)</option>
+        <option value="band">Band</option>
+        <option value="learn">Learn</option>
+        <option value="casual">Casual</option>
+        <option value="pro">Pro</option>
+    </select>
+  </div>
+</template>
