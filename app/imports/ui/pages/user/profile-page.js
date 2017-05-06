@@ -5,6 +5,8 @@ import { _ } from 'meteor/underscore';
 import { Profiles } from '/imports/api/profile/ProfileCollection';
 import { Interests } from '/imports/api/interest/InterestCollection';
 import { Goals } from '/imports/api/goal/GoalCollection';
+import { Capabilities } from '/imports/api/capability/CapabilityCollection';
+import { Tastes } from '/imports/api/taste/TasteCollection';
 
 const displaySuccessMessage = 'displaySuccessMessage';
 const displayErrorMessages = 'displayErrorMessages';
@@ -12,6 +14,8 @@ const displayErrorMessages = 'displayErrorMessages';
 Template.Profile_Page.onCreated(function onCreated() {
   this.subscribe(Interests.getPublicationName());
   this.subscribe(Goals.getPublicationName());
+  this.subscribe(Capabilities.getPublicationName());
+  this.subscribe(Tastes.getPublicationName());
   this.subscribe(Profiles.getPublicationName());
   this.messageFlags = new ReactiveDict();
   this.messageFlags.set(displaySuccessMessage, false);
@@ -53,6 +57,22 @@ Template.Profile_Page.helpers({
               return { label: goal.name, selected: _.contains(selectedGoals, goal.name) };
             });
   },
+  capabilities() {
+    const profile = Profiles.findDoc(FlowRouter.getParam('username'));
+    const selectedCapabilities = profile.goalcapabilities;
+    return profile && _.map(Capabilities.findAll(),
+            function makeGoalsObject(capability) {
+              return { label: capability.name, selected: _.contains(selectedCapabilities, capability.name) };
+            });
+  },
+  tastes() {
+    const profile = Profiles.findDoc(FlowRouter.getParam('username'));
+    const selectedTastes = profile.tastes;
+    return profile && _.map(Tastes.findAll(),
+            function makeGoalsObject(taste) {
+              return { label: taste.name, selected: _.contains(selectedTastes, taste.name) };
+            });
+  },
 });
 
 
@@ -72,9 +92,13 @@ Template.Profile_Page.events({
     const interests = _.map(selectedInterests, (option) => option.value);
     const selectedGoals = _.filter(event.target.Goals.selectedOptions, (option) => option.selected);
     const goals = _.map(selectedGoals, (option) => option.value);
+    const selectedCapabilities = _.filter(event.target.Capabilities.selectedOptions, (option) => option.selected);
+    const capabilities = _.map(selectedCapabilities, (option) => option.value);
+    const selectedTastes = _.filter(event.target.Tastes.selectedOptions, (option) => option.selected);
+    const tastes = _.map(selectedTastes, (option) => option.value);
 
     const updatedProfileData = { firstName, lastName, title, picture, github, facebook,
-      instagram, bio, interests, goals, username };
+      instagram, bio, interests, goals, capabilities, tastes, username };
 
     // Clear out any old validation errors.
     instance.context.resetValidation();

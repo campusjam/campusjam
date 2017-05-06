@@ -2,6 +2,8 @@ import { SimpleSchema } from 'meteor/aldeed:simple-schema';
 import BaseCollection from '/imports/api/base/BaseCollection';
 import { Interests } from '/imports/api/interest/InterestCollection';
 import { Goals } from '/imports/api/goal/GoalCollection';
+import { Capabilities } from '/imports/api/capability/CapabilityCollection';
+import { Tastes } from '/imports/api/taste/TasteCollection';
 import { check } from 'meteor/check';
 import { Meteor } from 'meteor/meteor';
 
@@ -25,6 +27,8 @@ class ProfileCollection extends BaseCollection {
       bio: { type: String, optional: true },
       interests: { type: [String], optional: true },
       goals: { type: [String], optional: true },
+      capabilities: { type: [String], optional: true },
+      tastes: { type: [String], optional: true },
       title: { type: String, optional: true },
       picture: { type: SimpleSchema.RegEx.Url, optional: true },
       github: { type: SimpleSchema.RegEx.Url, optional: true },
@@ -55,7 +59,7 @@ class ProfileCollection extends BaseCollection {
    * if one or more interests are not defined, or if github, facebook, and instagram are not URLs.
    * @returns The newly created docID.
    */
-  define({ firstName = '', lastName = '', username, bio = '', interests, goals,
+  define({ firstName = '', lastName = '', username, bio = '', interests, goals, capabilities, tastes,
       picture = '', title = '', github = '',
       facebook = '', instagram = '' }) {
     // make sure required fields are OK.
@@ -70,8 +74,10 @@ class ProfileCollection extends BaseCollection {
     // Throw an error if any of the passed Interest names are not defined.
     Interests.assertNames(interests);
     Goals.assertNames(goals);
-    return this._collection.insert({ firstName, lastName, username, bio, interests, goals, picture, title, github,
-      facebook, instagram });
+    Capabilities.assertNames(capabilities);
+    Tastes.assertNames(tastes);
+    return this._collection.insert({ firstName, lastName, username, bio, interests, goals, capabilities, tastes,
+      picture, title, github, facebook, instagram });
   }
 
   /**
@@ -87,12 +93,15 @@ class ProfileCollection extends BaseCollection {
     const bio = doc.bio;
     const interests = doc.interests;
     const goals = doc.goals;
+    const capabilities = doc.capabilities;
+    const tastes = doc.tastes;
     const picture = doc.picture;
     const title = doc.title;
     const github = doc.github;
     const facebook = doc.facebook;
     const instagram = doc.instagram;
-    return { firstName, lastName, username, bio, interests, goals, picture, title, github, facebook, instagram };
+    return { firstName, lastName, username, bio, interests, goals, capabilities, tastes, picture, title, github,
+      facebook, instagram };
   }
 }
 

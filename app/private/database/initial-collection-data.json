@@ -100,6 +100,40 @@
       ]
     },
     {
+      "name": "CapabilityCollection",
+      "contents": [
+        {
+          "name": "Piano"
+        },
+        {
+          "name": "Flute"
+        },
+        {
+          "name": "Trumpet"
+        },
+        {
+          "name": "Guitar"
+        }
+      ]
+    },
+    {
+      "name": "TasteCollection",
+      "contents": [
+        {
+          "name": "Jazz"
+        },
+        {
+          "name": "Pop"
+        },
+        {
+          "name": "Rock"
+        },
+        {
+          "name": "Jawaiian"
+        }
+      ]
+    },
+    {
       "name": "ProfileCollection",
       "contents": [
         {
@@ -112,6 +146,14 @@
           ],
           "goals": [
             "Pro"
+          ],
+          "capabilities": [
+            "Piano",
+            "Guitar"
+          ],
+          "tastes": [
+            "Pop",
+            "Jawaiian"
           ],
           "title": "Associate Professor, Information and Computer Sciences",
           "picture": "/images/altenberg.jpg"
@@ -126,6 +168,14 @@
           ],
           "goals": [
             "Learn"
+          ],
+          "capabilities": [
+            "Piano",
+            "Flute"
+          ],
+          "tastes": [
+            "Jazz",
+            "Jawaiian"
           ],
           "title": "Associate Professor, Information and Computer Sciences",
           "picture": "/images/baek.jpg"
@@ -155,6 +205,14 @@
             "Mars",
             "Imu Cooking"
           ],
+          "capabilities": [
+            "Piano"
+          ],
+          "tastes": [
+            "Pop",
+            "Jawaiian",
+            "Rock"
+          ],
           "title": "Associate Professor, Information and Computer Sciences",
           "picture": "/images/binsted.jpg"
         },
@@ -171,6 +229,12 @@
           "goals": [
             "Learn",
             "Pro"
+          ],
+          "capabilities": [
+            "Guitar"
+          ],
+          "tastes": [
+            "Jawaiian"
           ],
           "title": "Professor, Information and Computer Sciences",
           "picture": "/images/casanova.jpg"
