@@ -1,5 +1,5 @@
 {
-  "name": "bowfolios",
+  "name": "campusjam",
   "private": true,
   "scripts": {
     "start": "meteor --no-release-check --settings ../config/settings.development.json",
