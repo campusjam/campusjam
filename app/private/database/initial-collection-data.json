@@ -83,6 +83,57 @@
       ]
     },
     {
+      "name": "GoalCollection",
+      "contents": [
+        {
+          "name": "Band"
+        },
+        {
+          "name": "Learn"
+        },
+        {
+          "name": "Casual"
+        },
+        {
+          "name": "Pro"
+        }
+      ]
+    },
+    {
+      "name": "CapabilityCollection",
+      "contents": [
+        {
+          "name": "Piano"
+        },
+        {
+          "name": "Flute"
+        },
+        {
+          "name": "Trumpet"
+        },
+        {
+          "name": "Guitar"
+        }
+      ]
+    },
+    {
+      "name": "TasteCollection",
+      "contents": [
+        {
+          "name": "Jazz"
+        },
+        {
+          "name": "Pop"
+        },
+        {
+          "name": "Rock"
+        },
+        {
+          "name": "Jawaiian"
+        }
+      ]
+    },
+    {
       "name": "ProfileCollection",
       "contents": [
         {
@@ -92,6 +143,17 @@
           "bio": "I am an Associate Professor of Information and Computer Sciences at the University of Hawaii.",
           "interests": [
             "Evolutionary Computation"
+          ],
+          "goals": [
+            "Pro"
+          ],
+          "capabilities": [
+            "Piano",
+            "Guitar"
+          ],
+          "tastes": [
+            "Pop",
+            "Jawaiian"
           ],
           "title": "Associate Professor, Information and Computer Sciences",
           "picture": "/images/altenberg.jpg"
@@ -103,6 +165,17 @@
           "bio": "I am an Associate Professor of Information and Computer Sciences at the University of Hawaii.",
           "interests": [
             "Computer Vision"
+          ],
+          "goals": [
+            "Learn"
+          ],
+          "capabilities": [
+            "Piano",
+            "Flute"
+          ],
+          "tastes": [
+            "Jazz",
+            "Jawaiian"
           ],
           "title": "Associate Professor, Information and Computer Sciences",
           "picture": "/images/baek.jpg"
@@ -116,6 +189,10 @@
             "Mobile Networks",
             "Sailing"
           ],
+          "goals": [
+            "Casual",
+            "Learn"
+          ],
           "title": "Associate Professor, Information and Computer Sciences",
           "picture": "/images/biagioni.jpg"
         },
@@ -127,6 +204,14 @@
           "interests": [
             "Mars",
             "Imu Cooking"
+          ],
+          "capabilities": [
+            "Piano"
+          ],
+          "tastes": [
+            "Pop",
+            "Jawaiian",
+            "Rock"
           ],
           "title": "Associate Professor, Information and Computer Sciences",
           "picture": "/images/binsted.jpg"
@@ -140,6 +225,16 @@
           "interests": [
             "Surfing",
             "Photography"
+          ],
+          "goals": [
+            "Learn",
+            "Pro"
+          ],
+          "capabilities": [
+            "Guitar"
+          ],
+          "tastes": [
+            "Jawaiian"
           ],
           "title": "Professor, Information and Computer Sciences",
           "picture": "/images/casanova.jpg"

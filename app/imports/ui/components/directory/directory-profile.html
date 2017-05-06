@@ -17,6 +17,21 @@
           <a style="margin-bottom: 2px" class="ui teal tag small label">{{interest}}</a>
         {{/each}}
       </div>
+      <div style="margin-top: 10px">
+        {{#each goal in profile.goals}}
+          <a style="margin-bottom: 2px" class="ui orange tag small label">{{goal}}</a>
+        {{/each}}
+      </div>
+      <div style="margin-top: 10px">
+        {{#each capability in profile.capabilities}}
+          <a style="margin-bottom: 2px" class="ui blue tag small label">{{capability}}</a>
+        {{/each}}
+      </div>
+      <div style="margin-top: 10px">
+        {{#each taste in profile.tastes}}
+          <a style="margin-bottom: 2px" class="ui pink tag small label">{{taste}}</a>
+        {{/each}}
+      </div>
 
     </div>
     <div class="extra content">
