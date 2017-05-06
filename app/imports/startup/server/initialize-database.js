@@ -35,7 +35,7 @@ Meteor.startup(() => {
     return memo + collection.count();
   }, 0);
   if (totalDocuments === 0) {
-    const fileName = Meteor.settings.initialDatabaseFileName;
+    const fileName = Meteor.settings.public.initialDatabaseFileName;
     console.log(`Restoring database from file ${fileName}.`);
     const restoreJSON = JSON.parse(Assets.getText(fileName));
     _.each(collectionList, collection => {
