@@ -218,6 +218,9 @@
             "Mars",
             "Imu Cooking"
           ],
+          "capabilities": [
+            "Evolutionary Computation"
+          ],
           "title": "Associate Professor, Information and Computer Sciences",
           "picture": "/images/binsted.jpg"
         },
@@ -230,6 +233,9 @@
           "interests": [
             "Surfing",
             "Photography"
+          ],
+          "capabilities": [
+            "Evolutionary Computation"
           ],
           "title": "Professor, Information and Computer Sciences",
           "picture": "/images/casanova.jpg"
