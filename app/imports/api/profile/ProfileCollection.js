@@ -21,11 +21,11 @@ class ProfileCollection extends BaseCollection {
     super('Profile', new SimpleSchema({
       username: { type: String },
       // Remainder are optional
-      firstName: { type: String, optional: true },
-      lastName: { type: String, optional: true },
-      goals: { type: [String], optional: true },
-      capabilities: { type: [String], optional: true },
-      tastes: { type: [String], optional: true },
+      firstName: { type: String, optional: false },
+      lastName: { type: String, optional: false },
+      goals: { type: [String], optional: false },
+      capabilities: { type: [String], optional: false },
+      tastes: { type: [String], optional: false },
       title: { type: String, optional: true },
       picture: { type: SimpleSchema.RegEx.Url, optional: true },
       youtube: { type: SimpleSchema.RegEx.Url, optional: true },
@@ -54,12 +54,12 @@ class ProfileCollection extends BaseCollection {
    * if one or more goals are not defined, or if youtube, soundcloud, and  are not URLs.
    * @returns The newly created docID.
    */
-  define({ firstName = '', lastName = '', username, goals, capabilities, tastes,
-      picture = '', title = '', youtube = '',
-      soundcloud = '' }) {
+  define({
+           firstName = '', lastName = '', username, goals, capabilities, tastes,
+           picture = '', title = '', youtube = '', soundcloud = '',
+         }) {
     // make sure required fields are OK.
-    const checkPattern = { firstName: String, lastName: String, username: String, picture: String,
-      title: String };
+    const checkPattern = { firstName: String, lastName: String, username: String, picture: String, title: String };
     check({ firstName, lastName, username, picture, title }, checkPattern);
 
     if (this.find({ username }).count() > 0) {
@@ -70,8 +70,9 @@ class ProfileCollection extends BaseCollection {
     Goals.assertNames(goals);
     Capabilities.assertNames(capabilities);
     Tastes.assertNames(tastes);
-    return this._collection.insert({ firstName, lastName, username, goals, capabilities, tastes,
-      picture, title, youtube, soundcloud });
+    return this._collection.insert({
+      firstName, lastName, username, goals, capabilities, tastes, picture, title, youtube, soundcloud,
+    });
   }
 
   /**
@@ -91,8 +92,7 @@ class ProfileCollection extends BaseCollection {
     const title = doc.title;
     const youtube = doc.youtube;
     const soundcloud = doc.soundcloud;
-    return { firstName, lastName, username, goals, capabilities, tastes, picture, title, youtube,
-      soundcloud };
+    return { firstName, lastName, username, goals, capabilities, tastes, picture, title, youtube, soundcloud };
   }
 }
 

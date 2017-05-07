@@ -49,7 +49,7 @@ Template.Profile_Page.helpers({
   },
   capabilities() {
     const profile = Profiles.findDoc(FlowRouter.getParam('username'));
-    const selectedCapabilities = profile.goalcapabilities;
+    const selectedCapabilities = profile.capabilities;
     return profile && _.map(Capabilities.findAll(),
             function makeGoalsObject(capability) {
               return { label: capability.name, selected: _.contains(selectedCapabilities, capability.name) };
@@ -64,7 +64,6 @@ Template.Profile_Page.helpers({
             });
   },
 });
-
 
 Template.Profile_Page.events({
   'submit .profile-data-form'(event, instance) {
