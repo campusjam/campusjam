@@ -20,9 +20,6 @@
       </div>
 
       <div class="field">
-        {{> Select_Form_Control label="Interests" options=interests errorMessage=(fieldError "interests") multiple=true }}
-      </div>
-      <div class="field">
         {{> Select_Form_Control label="Goals" options=goals errorMessage=(fieldError "goals") multiple=true }}
       </div>
       <div class="field">
@@ -34,14 +31,11 @@
       </div>
 
       <div class="fields">
-
-        {{> Social_Network_Form_Control label="Github" icon="github" placeholder="pmjohnson" value=profile.github errorMessage=(fieldError "github")}}
-        {{> Social_Network_Form_Control label="Facebook" icon="facebook" placeholder="pmjohnson" value=profile.facebook errorMessage=(fieldError "facebook")}}
-        {{> Social_Network_Form_Control label="Instagram" icon="instagram" placeholder="pmjohnson" value=profile.instagram errorMessage=(fieldError "instagram")}}
-
+        {{> Social_Network_Form_Control label="Youtube" icon="youtube" placeholder="pmjohnson" value=profile.youtube
+            errorMessage=(fieldError "youtube")}}
+        {{> Social_Network_Form_Control label="Soundcloud" icon="soundcloud" placeholder="pmjohnson"
+            value=profile.soundcloud errorMessage=(fieldError "soundcloud")}}
       </div>
-
-      {{> TextArea_Form_Control label="Bio" value=profile.bio placeholder="Short bio statement here" errorMessage=(fieldError "bio")}}
 
 
       <button class="ui primary button" type="submit">Submit</button>

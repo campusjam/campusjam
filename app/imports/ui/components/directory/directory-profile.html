@@ -9,14 +9,6 @@
       <div class="meta">
         {{ profile.title}}
       </div>
-      <div class="description">
-        {{ profile.bio }}
-      </div>
-      <div style="margin-top: 10px">
-        {{#each interest in profile.interests}}
-          <a style="margin-bottom: 2px" class="ui teal tag small label">{{interest}}</a>
-        {{/each}}
-      </div>
       <div style="margin-top: 10px">
         {{#each goal in profile.goals}}
           <a style="margin-bottom: 2px" class="ui orange tag small label">{{goal}}</a>
@@ -37,14 +29,13 @@
     <div class="extra content">
       <div class="ui equal width center aligned grid">
         <div class="column"><a href="mailto:{{ profile.username}}@hawaii.edu"><i class="big mail icon"></i></a></div>
-        {{#if profile.github }}
-          <div class="column"><a href="https://github.com/{{ profile.github}}"><i class="big github icon"></i></a></div>
+        {{#if profile.youtube }}
+          <div class="column"><a href="https://youtube.com/{{ profile.youtube}}"><i class="big youtube icon"></i></a>
+          </div>
         {{/if}}
-        {{#if profile.facebook }}
-          <div class="column"><a href="https://facebook.com/{{ profile.facebook}}"><i class="big facebook icon"></i></a></div>
-        {{/if}}
-        {{#if profile.instagram }}
-          <div class="column"><a href="https://instagram.com/{{ profile.instagram}}"><i class="big instagram icon"></i></a></div>
+        {{#if profile.soundcloud }}
+          <div class="column"><a href="https://soundcloud.com/{{ profile.soundcloud}}"><i class="big soundcloud icon">
+          </i></a></div>
         {{/if}}
       </div>
     </div>
