@@ -1,6 +1,8 @@
 import { SimpleSchema } from 'meteor/aldeed:simple-schema';
 import BaseCollection from '/imports/api/base/BaseCollection';
-import { Interests } from '/imports/api/interest/InterestCollection';
+import { Goals } from '/imports/api/goal/GoalCollection';
+import { Capabilities } from '/imports/api/capability/CapabilityCollection';
+import { Tastes } from '/imports/api/taste/TasteCollection';
 import { check } from 'meteor/check';
 
 /** @module Profile */
@@ -55,9 +57,9 @@ class EventCollection extends BaseCollection {
     check({ eventName, createBy, username, place, description }, checkPattern);
 
     // Throw an error if any of the passed Interest names are not defined.
-    Interests.assertNames(tastes);
-    Interests.assertNames(capabilities);
-    Interests.assertNames(goals);
+    Tastes.assertNames(tastes);
+    Capabilities.assertNames(capabilities);
+    Goals.assertNames(goals);
     return this._collection.insert({ eventName, createBy, username, place, tastes, capabilities, goals, description });
   }
 

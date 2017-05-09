@@ -56,7 +56,7 @@ class ProfileCollection extends BaseCollection {
    */
   define({
            firstName = '', lastName = '', username, goals, capabilities, tastes,
-           picture = '', title = '', youtube = '', soundcloud = ''
+           picture = '', title = '', youtube = '', soundcloud = '',
          }) {
     // make sure required fields are OK.
     const checkPattern = { firstName: String, lastName: String, username: String, picture: String, title: String };
