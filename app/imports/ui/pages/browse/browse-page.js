@@ -10,7 +10,7 @@ const selectedGoalsKey = 'selectedGoals';
 const selectedCapabilitiesKey = 'selectedCapabilities';
 const selectedTastesKey = 'selectedTastes';
 
-Template.Filter_Page.onCreated(function onCreated() {
+Template.Browse_Page.onCreated(function onCreated() {
   this.subscribe(Goals.getPublicationName());
   this.subscribe(Capabilities.getPublicationName());
   this.subscribe(Tastes.getPublicationName());
@@ -21,7 +21,7 @@ Template.Filter_Page.onCreated(function onCreated() {
   this.messageFlags.set(selectedTastesKey, undefined);
 });
 
-Template.Filter_Page.helpers({
+Template.Browse_Page.helpers({
   profiles() {
     // Initialize selected items to all of them if messageFlags is undefined.
     if (!Template.instance().messageFlags.get(selectedGoalsKey)) {
@@ -75,8 +75,8 @@ Template.Filter_Page.helpers({
   },
 });
 
-Template.Filter_Page.events({
-  'submit .filter-data-form'(event, instance) {
+Template.Browse_Page.events({
+  'submit .browse-data-form'(event, instance) {
     event.preventDefault();
     const selectedOptions2 = _.filter(event.target.Goals.selectedOptions, (option) => option.selected);
     const selectedOptions3 = _.filter(event.target.Capabilities.selectedOptions, (option) => option.selected);

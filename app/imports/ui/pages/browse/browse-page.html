@@ -1,8 +1,8 @@
-<template name="Filter_Page">
+<template name="Browse_Page">
   {{#if Template.subscriptionsReady}}
     <div style="margin-top: 10px" class="ui container">
 
-      <form class="ui equal width form filter-data-form">
+      <form class="ui equal width form browse-data-form">
         <div class="field">
           {{> Select_Form_Control label="Goals" options=goals multiple=true }}
         </div>
@@ -12,10 +12,10 @@
         <div class="field">
           {{> Select_Form_Control label="Tastes" options=tastes multiple=true }}
         </div>
-        <button class="ui teal button" type="submit">Filter</button>
+        <button class="ui teal button" type="submit">Browse</button>
       </form>
 
-      {{> Filter_Page_Directory profiles=profiles }}
+      {{> Browse_Page_Directory profiles=profiles }}
 
     </div>
   {{/if}}
