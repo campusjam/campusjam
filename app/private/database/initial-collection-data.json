@@ -2,83 +2,53 @@
   "comment": "Initial contents for the BowFolios database. For development purposes only.",
   "collections": [
     {
-      "name": "InterestCollection",
+      "name": "GoalCollection",
       "contents": [
         {
-          "name": "Software Engineering",
-          "description": "Techniques for development of high quality systems"
+          "name": "Band"
         },
         {
-          "name": "Algorithms",
-          "description": "A set of rules to be followed in computation"
+          "name": "Learn"
         },
         {
-          "name": "Mobile Networks",
-          "description": "Networks created using mobile devices."
+          "name": "Casual"
         },
         {
-          "name": "Sailing",
-          "description": ""
+          "name": "Pro"
+        }
+      ]
+    },
+    {
+      "name": "CapabilityCollection",
+      "contents": [
+        {
+          "name": "Piano"
         },
         {
-          "name": "Mars",
-          "description": ""
+          "name": "Flute"
         },
         {
-          "name": "Imu Cooking",
-          "description": "Hawaiian practice of cooking in a pit."
+          "name": "Trumpet"
         },
         {
-          "name": "Scuba",
-          "description": ""
+          "name": "Guitar"
+        }
+      ]
+    },
+    {
+      "name": "TasteCollection",
+      "contents": [
+        {
+          "name": "Jazz"
         },
         {
-          "name": "Photography",
-          "description": ""
+          "name": "Pop"
         },
         {
-          "name": "Wind surfing",
-          "description": ""
+          "name": "Rock"
         },
         {
-          "name": "Psychology",
-          "description": ""
-        },
-        {
-          "name": "Motorcycling",
-          "description": ""
-        },
-        {
-          "name": "Accreditation",
-          "description": ""
-        },
-        {
-          "name": "Paddling",
-          "description": ""
-        },
-        {
-          "name": "Crossfit",
-          "description": ""
-        },
-        {
-          "name": "Cybersecurity",
-          "description": ""
-        },
-        {
-          "name": "Surfing",
-          "description": ""
-        },
-        {
-          "name": "Computer Vision",
-          "description": ""
-        },
-        {
-          "name": "Martial Arts",
-          "description": ""
-        },
-        {
-          "name": "Evolutionary Computation",
-          "description": ""
+          "name": "Jawaiian"
         }
       ]
     },
@@ -89,9 +59,17 @@
           "firstName": "Lee",
           "lastName": "Altenberg",
           "username": "altenber",
-          "bio": "I am an Associate Professor of Information and Computer Sciences at the University of Hawaii.",
-          "interests": [
-            "Evolutionary Computation"
+          "soundcloud": "altenberg",
+          "goals": [
+            "Pro"
+          ],
+          "capabilities": [
+            "Piano",
+            "Guitar"
+          ],
+          "tastes": [
+            "Pop",
+            "Jawaiian"
           ],
           "title": "Associate Professor, Information and Computer Sciences",
           "picture": "/images/altenberg.jpg"
@@ -100,9 +78,18 @@
           "firstName": "Kyungim",
           "lastName": "Baek",
           "username": "baek",
-          "bio": "I am an Associate Professor of Information and Computer Sciences at the University of Hawaii.",
-          "interests": [
-            "Computer Vision"
+          "youtube": "baek",
+          "soundcloud": "baek",
+          "goals": [
+            "Learn"
+          ],
+          "capabilities": [
+            "Piano",
+            "Flute"
+          ],
+          "tastes": [
+            "Jazz",
+            "Jawaiian"
           ],
           "title": "Associate Professor, Information and Computer Sciences",
           "picture": "/images/baek.jpg"
@@ -111,10 +98,9 @@
           "firstName": "Edo",
           "lastName": "Biagioni",
           "username": "esb",
-          "bio": "I am an Associate Professor of Information and Computer Sciences at the University of Hawaii.",
-          "interests": [
-            "Mobile Networks",
-            "Sailing"
+          "goals": [
+            "Casual",
+            "Learn"
           ],
           "title": "Associate Professor, Information and Computer Sciences",
           "picture": "/images/biagioni.jpg"
@@ -123,10 +109,13 @@
           "firstName": "Kim",
           "lastName": "Binsted",
           "username": "binsted",
-          "bio": "I am an Associate Professor of Information and Computer Sciences at the University of Hawaii.",
-          "interests": [
-            "Mars",
-            "Imu Cooking"
+          "capabilities": [
+            "Piano"
+          ],
+          "tastes": [
+            "Pop",
+            "Jawaiian",
+            "Rock"
           ],
           "title": "Associate Professor, Information and Computer Sciences",
           "picture": "/images/binsted.jpg"
@@ -135,11 +124,16 @@
           "firstName": "Henri",
           "lastName": "Casanova",
           "username": "henric",
-          "github": "henricasanova",
-          "bio": "I am a Professor of Information and Computer Sciences at the University of Hawaii.",
-          "interests": [
-            "Surfing",
-            "Photography"
+          "youtube": "henricasanova",
+          "goals": [
+            "Learn",
+            "Pro"
+          ],
+          "capabilities": [
+            "Guitar"
+          ],
+          "tastes": [
+            "Jawaiian"
           ],
           "title": "Professor, Information and Computer Sciences",
           "picture": "/images/casanova.jpg"

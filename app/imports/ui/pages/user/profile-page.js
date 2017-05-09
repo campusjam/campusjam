@@ -3,15 +3,17 @@ import { ReactiveDict } from 'meteor/reactive-dict';
 import { FlowRouter } from 'meteor/kadira:flow-router';
 import { _ } from 'meteor/underscore';
 import { Profiles } from '/imports/api/profile/ProfileCollection';
-import { Interests } from '/imports/api/interest/InterestCollection';
-// import { Capabilities } from '/imports/api/capability/CapabilityCollection';
+import { Goals } from '/imports/api/goal/GoalCollection';
+import { Capabilities } from '/imports/api/capability/CapabilityCollection';
+import { Tastes } from '/imports/api/taste/TasteCollection';
 
 const displaySuccessMessage = 'displaySuccessMessage';
 const displayErrorMessages = 'displayErrorMessages';
 
 Template.Profile_Page.onCreated(function onCreated() {
-  this.subscribe(Interests.getPublicationName());
-  // this.subscribe(Capabilities.getPublicationName());
+  this.subscribe(Goals.getPublicationName());
+  this.subscribe(Capabilities.getPublicationName());
+  this.subscribe(Tastes.getPublicationName());
   this.subscribe(Profiles.getPublicationName());
   this.messageFlags = new ReactiveDict();
   this.messageFlags.set(displaySuccessMessage, false);
@@ -37,24 +39,31 @@ Template.Profile_Page.helpers({
   profile() {
     return Profiles.findDoc(FlowRouter.getParam('username'));
   },
-  interests() {
+  goals() {
     const profile = Profiles.findDoc(FlowRouter.getParam('username'));
-    const selectedInterests = profile.interests;
-    return profile && _.map(Interests.findAll(),
-            function makeInterestObject(interest) {
-              return { label: interest.name, selected: _.contains(selectedInterests, interest.name) };
+    const selectedGoals = profile.goals;
+    return profile && _.map(Goals.findAll(),
+            function makeGoalsObject(goal) {
+              return { label: goal.name, selected: _.contains(selectedGoals, goal.name) };
             });
   },
-  // capabilities() {
-  //   const profile = Profiles.findDoc(FlowRouter.getParam('username'));
-  //   const selectedCapabilities = profile.capabilities;
-  //   return profile && _.map(Capabilities.findAll(),
-  //           function makeCapabilitiesObject(capability) {
-  //             return { label: capability.name, selected: _.contains(selectedCapabilities, capability.name) };
-  //           });
-  // },
+  capabilities() {
+    const profile = Profiles.findDoc(FlowRouter.getParam('username'));
+    const selectedCapabilities = profile.capabilities;
+    return profile && _.map(Capabilities.findAll(),
+            function makeGoalsObject(capability) {
+              return { label: capability.name, selected: _.contains(selectedCapabilities, capability.name) };
+            });
+  },
+  tastes() {
+    const profile = Profiles.findDoc(FlowRouter.getParam('username'));
+    const selectedTastes = profile.tastes;
+    return profile && _.map(Tastes.findAll(),
+            function makeGoalsObject(taste) {
+              return { label: taste.name, selected: _.contains(selectedTastes, taste.name) };
+            });
+  },
 });
-
 
 Template.Profile_Page.events({
   'submit .profile-data-form'(event, instance) {
@@ -64,17 +73,17 @@ Template.Profile_Page.events({
     const title = event.target.Title.value;
     const username = FlowRouter.getParam('username'); // schema requires username.
     const picture = event.target.Picture.value;
-    const github = event.target.Github.value;
-    const facebook = event.target.Facebook.value;
-    const instagram = event.target.Instagram.value;
-    const bio = event.target.Bio.value;
-    const selectedInterests = _.filter(event.target.Interests.selectedOptions, (option) => option.selected);
-    const interests = _.map(selectedInterests, (option) => option.value);
-    // const selectedCapabilities = _.filter(event.target.Capabilities.selectedOptions, (option) => option.selected);
-    // const capabilities = _.map(selectedCapabilities, (option) => option.value);
+    const youtube = event.target.Youtube.value;
+    const soundcloud = event.target.Soundcloud.value;
+    const selectedGoals = _.filter(event.target.Goals.selectedOptions, (option) => option.selected);
+    const goals = _.map(selectedGoals, (option) => option.value);
+    const selectedCapabilities = _.filter(event.target.Capabilities.selectedOptions, (option) => option.selected);
+    const capabilities = _.map(selectedCapabilities, (option) => option.value);
+    const selectedTastes = _.filter(event.target.Tastes.selectedOptions, (option) => option.selected);
+    const tastes = _.map(selectedTastes, (option) => option.value);
 
-    const updatedProfileData = { firstName, lastName, title, picture, github, facebook,
-      instagram, bio, interests, username };
+    const updatedProfileData = { firstName, lastName, title, picture, youtube, soundcloud, goals, capabilities, tastes,
+      username };
 
     // Clear out any old validation errors.
     instance.context.resetValidation();
