@@ -15,6 +15,12 @@
         },
         {
           "name": "Pro"
+        },
+        {
+          "name": "Music Videos"
+        },
+        {
+          "name": "Cover Songs"
         }
       ]
     },
@@ -31,7 +37,67 @@
           "name": "Trumpet"
         },
         {
-          "name": "Guitar"
+          "name": "Acoustic Guitar"
+        },
+        {
+          "name": "Triangle"
+        },
+        {
+          "name": "Drums"
+        },
+        {
+          "name": "Clarinet"
+        },
+        {
+          "name": "Xylophone"
+        },
+        {
+          "name": "Trumbone"
+        },
+        {
+          "name": "Bass"
+        },
+        {
+          "name": "Tuba"
+        },
+        {
+          "name": "Viola"
+        },
+        {
+          "name": "Violin"
+        },
+        {
+          "name": "Tambourine"
+        },
+        {
+          "name": "Clarinet"
+        },
+        {
+          "name": "Harmonica"
+        },
+        {
+          "name": "Harp"
+        },
+        {
+          "name": "Piccolo"
+        },
+        {
+          "name": "Saxophone"
+        },
+        {
+          "name": "Banjo"
+        },
+        {
+          "name": "Cello"
+        },
+        {
+          "name": "MIDI"
+        },
+        {
+          "name": "Electric Guitar"
+        },
+        {
+          "name": "Acoustic Guitar"
         }
       ]
     },
@@ -40,6 +106,54 @@
       "contents": [
         {
           "name": "Jazz"
+        },
+        {
+          "name": "Pop"
+        },
+        {
+          "name": "Rock"
+        },
+        {
+          "name": "Jawaiian"
+        },
+        {
+          "name": "J-pop"
+        },
+        {
+          "name": "K-pop"
+        },
+        {
+          "name": "Blues"
+        },
+        {
+          "name": "Reggae"
+        },
+        {
+          "name": "Country"
+        },
+        {
+          "name": "EDM"
+        },
+        {
+          "name": "Dubstep"
+        },
+        {
+          "name": "Folk"
+        },
+        {
+          "name": "M-pop"
+        },
+        {
+          "name": "C-pop"
+        },
+        {
+          "name": "Latin"
+        },
+        {
+          "name": "French"
+        },
+        {
+          "name": "Christian pop"
         },
         {
           "name": "Pop"
