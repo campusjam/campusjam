@@ -1,1 +1,3 @@
-<!-- Cannot change body padding here due to landing page. -->
+body{
+  background: linear-gradient(#03704D, #E0EFEA);
+}
