@@ -85,11 +85,11 @@ Template.Event_Page.helpers({
 });
 
 Template.Event_Page.events({
-  'submit .profile-data-form'(event, instance) {
+  'submit .event-data-form'(event, instance) {
     event.preventDefault();
     const eventName = event.target.EventName.value;
     const createBy = event.target.CreateBy.value;
-    const place = event.Place.Title.value;
+    const place = event.target.Place.value;
     const username = FlowRouter.getParam('username'); // schema requires username.
     const description = event.target.Description.value;
     const selectedGoals = _.filter(event.target.Goals.selectedOptions, (option) => option.selected);
@@ -110,7 +110,7 @@ Template.Event_Page.events({
     instance.context.validate(newEventData);
 
     if (instance.context.isValid()) {
-      const id = Events.insert(newEventData);
+      const id = Events.define(newEventData);
       instance.messageFlags.set(displaySuccessMessage, id);
       instance.messageFlags.set(displayErrorMessages, false);
     } else {

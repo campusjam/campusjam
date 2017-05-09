@@ -3,7 +3,7 @@
   {{#if Template.subscriptionsReady}}
 
   <div style="margin-top: 20px;" class="ui text container segment">
-    <form class="ui form event-data-form {{ errorClass }}">
+    <form class="ui form event-data-form {{ successClass }} {{ errorClass }}">
       <h2 class="ui dividing header">Create New Event</h2>
       <h3 class="ui dividing header">Basic Information</h3>
       <div class="field">
@@ -53,9 +53,13 @@
         {{> TextArea_Form_Control label="Description" placeholder="Describe event in more details" errorMessage=(fieldError "description")}}
       </div>
       <button class="ui button" type="submit">Submit</button>
+      {{#if displaySuccessMessage}}
+      <div class="ui success message">
+        <p>Event successfully added.</p>
+      </div>
+      {{/if}}
     </form>
   </div>
-
 
   {{/if}}
 
