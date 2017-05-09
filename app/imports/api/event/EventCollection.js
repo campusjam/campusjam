@@ -18,10 +18,11 @@ class EventCollection extends BaseCollection {
    */
   constructor() {
     super('Event', new SimpleSchema({
-      username: { type: String },
       eventName: { type: String, optional: true },
       createBy: { type: String, optional: true },
       place: { type: String, optional: true },
+      // startTime: { type: String, optional: true },
+      // endTime: { type: String, optional: true },
       tastes: { type: [String], optional: true },
       capabilities: { type: [String], optional: true },
       goals: { type: [String], optional: true },
@@ -51,16 +52,16 @@ class EventCollection extends BaseCollection {
    * if one or more interests are not defined, or if github, facebook, and instagram are not URLs.
    * @returns The newly created docID.
    */
-  define({ eventName = '', createBy = '', username, place = '', tastes, capabilities, goals, description = '' }) {
+  define({ eventName = '', createBy = '', place = '', tastes, capabilities, goals, description = '' }) {
     // make sure required fields are OK.
-    const checkPattern = { eventName: String, createBy: String, username: String, place: String, description: String };
-    check({ eventName, createBy, username, place, description }, checkPattern);
+    const checkPattern = { eventName: String, createBy: String, place: String, description: String };
+    check({ eventName, createBy, place, description }, checkPattern);
 
     // Throw an error if any of the passed Interest names are not defined.
     Tastes.assertNames(tastes);
     Capabilities.assertNames(capabilities);
     Goals.assertNames(goals);
-    return this._collection.insert({ eventName, createBy, username, place, tastes, capabilities, goals, description });
+    return this._collection.insert({ eventName, createBy, place, tastes, capabilities, goals, description });
   }
 
   /**
@@ -72,13 +73,12 @@ class EventCollection extends BaseCollection {
     const doc = this.findDoc(docID);
     const eventName = doc.eventName;
     const createBy = doc.createBy;
-    const username = doc.username;
     const place = doc.place;
     const tastes = doc.tastes;
     const capabilities = doc.capabilities;
     const goals = doc.goals;
     const description = doc.description;
-    return { eventName, createBy, username, place, tastes, capabilities, goals, description };
+    return { eventName, createBy, place, tastes, capabilities, goals, description };
   }
 }
 

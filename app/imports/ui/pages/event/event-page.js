@@ -1,6 +1,6 @@
 import { Template } from 'meteor/templating';
 import { ReactiveDict } from 'meteor/reactive-dict';
-import { FlowRouter } from 'meteor/kadira:flow-router';
+// import { FlowRouter } from 'meteor/kadira:flow-router';
 import { _ } from 'meteor/underscore';
 import { Events } from '/imports/api/event/EventCollection';
 import { Goals } from '/imports/api/goal/GoalCollection';
@@ -90,7 +90,6 @@ Template.Event_Page.events({
     const eventName = event.target.EventName.value;
     const createBy = event.target.CreateBy.value;
     const place = event.target.Place.value;
-    const username = FlowRouter.getParam('username'); // schema requires username.
     const description = event.target.Description.value;
     const selectedGoals = _.filter(event.target.Goals.selectedOptions, (option) => option.selected);
     const goals = _.map(selectedGoals, (option) => option.value);
@@ -99,8 +98,7 @@ Template.Event_Page.events({
     const selectedTastes = _.filter(event.target.Tastes.selectedOptions, (option) => option.selected);
     const tastes = _.map(selectedTastes, (option) => option.value);
 
-    const newEventData = { eventName, createBy, place, description, goals, capabilities, tastes,
-      username };
+    const newEventData = { eventName, createBy, place, description, goals, capabilities, tastes };
 
     // Clear out any old validation errors.
     instance.context.resetValidation();
