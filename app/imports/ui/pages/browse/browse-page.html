@@ -1,0 +1,24 @@
+<template name="Browse_Page">
+  {{#if Template.subscriptionsReady}}
+    <div style="margin-top: 10px" class="ui container">
+
+      <form class="ui equal width form browse-data-form">
+        <div class="field">
+          {{> Browse_Select_Form_Control label="Goals" options=goals multiple=true }}
+        </div>
+        <div class="field">
+          {{> Browse_Select_Form_Control label="Capabilities" options=capabilities multiple=true }}
+        </div>
+        <div class="field">
+          {{> Browse_Select_Form_Control label="Tastes" options=tastes multiple=true }}
+        </div>
+        <div style="text-align: center">
+        <button class="ui inverted basic button" type="submit">Browse</button>
+        </div>
+      </form>
+
+      {{> Browse_Page_Directory profiles=profiles }}
+
+    </div>
+  {{/if}}
+</template>

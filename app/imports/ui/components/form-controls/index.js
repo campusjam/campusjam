@@ -8,6 +8,8 @@ import './radio-field';
 import './radio-form-control.html';
 import './select-form-control.html';
 import './select-form-control';
+import './browse-select-form-control.html';
+import './browse-select-form-control';
 import './social-network-form-control';
 import './text-form-control.html';
 import './textarea-form-control.html';
