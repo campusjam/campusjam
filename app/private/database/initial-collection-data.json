@@ -46,9 +46,6 @@
           "name": "Drums"
         },
         {
-          "name": "Clarinet"
-        },
-        {
           "name": "Xylophone"
         },
         {
@@ -97,7 +94,7 @@
           "name": "Electric Guitar"
         },
         {
-          "name": "Acoustic Guitar"
+          "name": "Guitar"
         }
       ]
     },
