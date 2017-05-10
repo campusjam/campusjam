@@ -3,18 +3,80 @@
     {{#if Template.subscriptionsReady}}
 
       <div class="ui grid container" style="margin-top: 10px">
+        <div class="five wide column" style="padding-top: 10px">
 
-        <div class="ten wide column" style="padding-top: 10px">
           <h2 class="ui teal block header">
-            <i class="users icon"></i>
-            <div class="content" style="text-align: center; width: 250px; padding-left: 0;">
+
+            <div class="content" style="text-align: center; height: 49px; width: 300px; padding: 10px 0px 10px 0;">
+              <i class="user icon"></i>
+              My Profile
+            </div>
+          </h2>
+          <!--<h1 style="color: #E0EFEA">My Profile</h1>-->
+          <div class="ui centered card">
+            <div class="image">
+              {{#if myProfile.picture}}
+                <img src={{ myProfile.picture }}>
+              {{else}}
+                <img src="/images/musicCartoon.jpg">
+              {{/if}}
+            </div>
+            <div class="content">
+              <a class="header">{{ myProfile.firstName }} {{ myProfile.lastName }}</a>
+              <div class="meta">
+
+              </div>
+              <div class="description">
+                {{ myProfile.title }}
+              </div>
+            </div>
+            <div style="margin-top: 10px; padding-left: 15px">
+              {{#each goal in myProfile.goals}}
+                <a style="margin-bottom: 2px" class="ui orange tag small label">{{goal}}</a>
+              {{/each}}
+            </div>
+            <div style="margin-top: 10px; padding-left: 15px">
+              {{#each capability in myProfile.capabilities}}
+                <a style="margin-bottom: 2px" class="ui blue tag small label">{{capability}}</a>
+              {{/each}}
+            </div>
+            <div style="margin-top: 10px; padding-left: 15px">
+              {{#each taste in myProfile.tastes}}
+                <a style="margin-bottom: 2px" class="ui pink tag small label">{{taste}}</a>
+              {{/each}}
+            </div>
+            <div class="extra content">
+              <div class="ui equal width center aligned grid">
+                <div class="column"><a href="mailto:{{ myProfile.username}}@hawaii.edu"><i
+                    class="big mail icon"></i></a>
+                </div>
+                {{#if myProfile.youtube }}
+                  <div class="column"><a href="https://youtube.com/{{ myProfile.youtube}}"><i
+                      class="big youtube icon"></i></a>
+                  </div>
+                {{/if}}
+                {{#if myProfile.soundcloud }}
+                  <div class="column"><a href="https://soundcloud.com/{{ myProfile.soundcloud}}"><i
+                      class="big soundcloud icon">
+                  </i></a></div>
+                {{/if}}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="eleven wide column" style="padding-top: 10px">
+          <h2 class="ui teal block header">
+
+            <div class="content" style="text-align: center; width: 650px; padding-left: 0;">
+              <i class="users icon"></i>
               Users
               <div class="sub header" style="color: teal">People in your community.</div>
             </div>
           </h2>
 
           <div style="margin-top: 10px" class="ui container">
-            <div class="ui cards" style="margin-left: 10px">
+            <div class="ui centered cards" style="margin-left: 10px">
 
               {{#each profile in profiles }}
                 {{> Directory_Profile profile=profile }}
@@ -24,117 +86,23 @@
           </div>
 
         </div>
+      </div>
+      <div class="ui grid container" style="margin-top: 10px">
 
-        <div class="six wide column" style="padding-top: 10px">
+        <div class="sixteen wide column" style="padding-top: 10px">
           <h2 class="ui teal block header" style="text-align: center">
-            <i class="calendar icon"></i>
-            <div class="content" style="text-align: center; width: 250px; padding-left: 0;">
+
+            <div class="content" style="text-align: center; width: 1100px; padding-left: 0;">
+              <i class="calendar icon"></i>
               Upcoming Events
               <div class="sub header" style="color: teal">Events you might be interested in.</div>
             </div>
           </h2>
 
-          <div class="ui cards" style="margin-left: 10px;">
-            <div class="card">
-              <div class="content">
-                <div class="header">
-                  UHM Night Concert
-                </div>
-                <div class="meta">
-                  From October 17, 2017 at 6:00PM
-                  to October 17, 2017 at 8:00PM
-                  at Kennedy Theatre
-                </div>
-                <div class="description">
-                  Come!
-                </div>
-                <div style="margin-top: 10px">
-                  <a style="margin-bottom: 2px" class="ui teal tag small label">Classical</a>
-                  <a style="margin-bottom: 2px" class="ui teal tag small label">Band</a>
-                </div>
-              </div>
-              <div class="extra content">
-                <div class="ui two buttons">
-                  <div class="ui basic green button">Join Us</div>
-                  <div class="ui basic green button">Contact Us</div>
-                </div>
-              </div>
-            </div>
-            <div class="card">
-              <div class="content">
-                <div class="header">
-                  UHM Night Concert
-                </div>
-                <div class="meta">
-                  From October 17, 2017 at 6:00PM
-                  to October 17, 2017 at 8:00PM
-                  at Kennedy Theatre
-                </div>
-                <div class="description">
-                  Come!
-                </div>
-                <div style="margin-top: 10px">
-                  <a style="margin-bottom: 2px" class="ui teal tag small label">Classical</a>
-                  <a style="margin-bottom: 2px" class="ui teal tag small label">Band</a>
-                </div>
-              </div>
-              <div class="extra content">
-                <div class="ui two buttons">
-                  <div class="ui basic green button">Join Us</div>
-                  <div class="ui basic green button">Contact Us</div>
-                </div>
-              </div>
-            </div>
-            <div class="card">
-              <div class="content">
-                <div class="header">
-                  UHM Night Concert
-                </div>
-                <div class="meta">
-                  From October 17, 2017 at 6:00PM
-                  to October 17, 2017 at 8:00PM
-                  at Kennedy Theatre
-                </div>
-                <div class="description">
-                  Come!
-                </div>
-                <div style="margin-top: 10px">
-                  <a style="margin-bottom: 2px" class="ui teal tag small label">Classical</a>
-                  <a style="margin-bottom: 2px" class="ui teal tag small label">Band</a>
-                </div>
-              </div>
-              <div class="extra content">
-                <div class="ui two buttons">
-                  <div class="ui basic green button">Join Us</div>
-                  <div class="ui basic green button">Contact Us</div>
-                </div>
-              </div>
-            </div>
-            <div class="card">
-              <div class="content">
-                <div class="header">
-                  UHM Night Concert
-                </div>
-                <div class="meta">
-                  From October 17, 2017 at 6:00PM
-                  to October 17, 2017 at 8:00PM
-                  at Kennedy Theatre
-                </div>
-                <div class="description">
-                  Come!
-                </div>
-                <div style="margin-top: 10px">
-                  <a style="margin-bottom: 2px" class="ui teal tag small label">Classical</a>
-                  <a style="margin-bottom: 2px" class="ui teal tag small label">Band</a>
-                </div>
-              </div>
-              <div class="extra content">
-                <div class="ui two buttons">
-                  <div class="ui basic green button">Join Us</div>
-                  <div class="ui basic green button">Contact Us</div>
-                </div>
-              </div>
-            </div>
+          <div class="ui centered cards" style="margin-left: 10px;">
+            {{#each event in events }}
+              {{> Directory_Event event=event }}
+            {{/each}}
           </div>
         </div>
       </div>
