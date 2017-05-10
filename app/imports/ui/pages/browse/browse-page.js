@@ -86,3 +86,4 @@ Template.Browse_Page.events({
     instance.messageFlags.set(selectedTastesKey, _.map(selectedOptions4, (option) => option.value));
   },
 });
+

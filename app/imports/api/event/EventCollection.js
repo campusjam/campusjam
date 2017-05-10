@@ -18,15 +18,18 @@ class EventCollection extends BaseCollection {
    */
   constructor() {
     super('Event', new SimpleSchema({
-      eventName: { type: String, optional: true },
-      createBy: { type: String, optional: true },
-      place: { type: String, optional: true },
-      // startTime: { type: String, optional: true },
-      // endTime: { type: String, optional: true },
-      tastes: { type: [String], optional: true },
-      capabilities: { type: [String], optional: true },
-      goals: { type: [String], optional: true },
-      description: { type: String, optional: true },
+      username: { type: String },
+      eventName: { type: String },
+      createBy: { type: String },
+      place: { type: String },
+      startDate: { type: String },
+      endDate: { type: String },
+      startTime: { type: String },
+      endTime: { type: String },
+      tastes: { type: [String] },
+      capabilities: { type: [String] },
+      goals: { type: [String] },
+      description: { type: String },
     }));
   }
 
@@ -52,7 +55,8 @@ class EventCollection extends BaseCollection {
    * if one or more interests are not defined, or if github, facebook, and instagram are not URLs.
    * @returns The newly created docID.
    */
-  define({ eventName = '', createBy = '', place = '', tastes, capabilities, goals, description = '' }) {
+  define({ eventName = '', createBy = '', place = '', tastes, capabilities, goals, description = '',
+      startTime = '', endTime = '', startDate = '', endDate = '', username }) {
     // make sure required fields are OK.
     const checkPattern = { eventName: String, createBy: String, place: String, description: String };
     check({ eventName, createBy, place, description }, checkPattern);
@@ -61,7 +65,8 @@ class EventCollection extends BaseCollection {
     Tastes.assertNames(tastes);
     Capabilities.assertNames(capabilities);
     Goals.assertNames(goals);
-    return this._collection.insert({ eventName, createBy, place, tastes, capabilities, goals, description });
+    return this._collection.insert({ eventName, createBy, place, tastes, capabilities, goals, description,
+      username, startTime, endTime, startDate, endDate });
   }
 
   /**
@@ -71,14 +76,20 @@ class EventCollection extends BaseCollection {
    */
   dumpOne(docID) {
     const doc = this.findDoc(docID);
+    const username = doc.username;
     const eventName = doc.eventName;
     const createBy = doc.createBy;
     const place = doc.place;
+    const startDate = doc.startDate;
+    const endDate = doc.endDate;
+    const startTime = doc.startTime;
+    const endTime = doc.endTime;
     const tastes = doc.tastes;
     const capabilities = doc.capabilities;
     const goals = doc.goals;
     const description = doc.description;
-    return { eventName, createBy, place, tastes, capabilities, goals, description };
+    return { username, eventName, createBy, place, startDate, endDate,
+      startTime, endTime, tastes, capabilities, goals, description };
   }
 }
 

@@ -1,7 +1,5 @@
 <template name="Event_Page">
-
   {{#if Template.subscriptionsReady}}
-
   <div style="margin-top: 20px;" class="ui text container segment">
     <form class="ui form event-data-form {{ successClass }} {{ errorClass }}">
       <h2 class="ui dividing header">Create New Event</h2>
@@ -19,6 +17,17 @@
 
       <div class="field">
         {{> Text_Form_Control label="Place" placeholder="Where?" errorMessage=(fieldError "place")}}
+      </div>
+
+      <div class="field">
+        <div class ="two fields">
+          <div class="field">
+            {{> Text_Form_Control label="StartDate" placeholder="MM/DD/YYYY" errorMessage=(fieldError "startDate")}}
+          </div>
+          <div class="field">
+            {{> Text_Form_Control label="EndDate" placeholder="MM/DD/YYYY" errorMessage=(fieldError "endDate")}}
+          </div>
+        </div>
       </div>
 
       <div class="field">
