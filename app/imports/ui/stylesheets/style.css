@@ -1,1 +1,7 @@
-<!-- Cannot change body padding here due to landing page. -->
+html {
+  min-height: 100%;
+}
+
+body{
+  background: linear-gradient(to bottom, #03704D, #E0EFEA);
+}

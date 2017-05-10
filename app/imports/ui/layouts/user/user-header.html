@@ -1,10 +1,10 @@
 <template name="User_Header">
-  <div class="ui top fixed borderless inverted menu">
+  <div style="background-color: #007955" class="ui top fixed borderless inverted menu">
     <div class="ui container">
       <div class="item"><h1>Campus Jam</h1></div>
       <a class="{{ isActiveRoute 'Home_Page' }} item" href="{{pathFor 'Home_Page' username=routeUserName}}"><i class="home icon"></i>Home</a>
       <a class="{{ isActiveRoute 'Profile_Page' }} item" href="{{pathFor 'Profile_Page' username=routeUserName}}"><i class="user icon"></i>Profile</a>
-      <a class="{{ isActiveRoute 'Filter_Page' }} item" href="{{pathFor 'Filter_Page' username=routeUserName}}"><i class="users icon"></i>Filter</a>
+      <a class="{{ isActiveRoute 'Browse_Page' }} item" href="{{pathFor 'Browse_Page' username=routeUserName}}"><i class="users icon"></i>Browse</a>
       <a class="{{ isActiveRoute 'Event_Page' }} item" href="{{pathFor 'Event_Page' username=routeUserName}}"><i class="calendar icon"></i>Event</a>
       <div class="right aligned item">{{> Cas_Login }}</div>
     </div>
