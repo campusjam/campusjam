@@ -15,6 +15,6 @@ Template.Home_Page.helpers({
    * Returns a cursor to profiles, sorted by last name.
    */
   profiles() {
-    return Profiles.find({}, { sort: { random: 1 } });
+    return Profiles.find({}, { sort: { firstName: 1 } });
   },
 });
