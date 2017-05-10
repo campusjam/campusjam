@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /**
  *
  * Created by danli on 5/9/2017.
