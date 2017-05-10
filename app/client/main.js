@@ -18,6 +18,7 @@ import '/imports/api/profile';
 import '/imports/api/goal';
 import '/imports/api/capability';
 import '/imports/api/taste';
-import '/imports/ui/stylesheets/style.css';
 import '/imports/api/event';
+import '/imports/ui/stylesheets/style.css';
+
 
