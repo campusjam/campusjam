@@ -10,7 +10,7 @@ import { Tastes } from '/imports/api/taste/TasteCollection';
 const displaySuccessMessage = 'displaySuccessMessage';
 const displayErrorMessages = 'displayErrorMessages';
 
-export const TimeObject = [{ label: '0:00 AM', value: '0' },
+export const TimeObject = [{ label: '12:00 AM', value: '0' },
                            { label: '1:00 AM', value: '1' },
                            { label: '2:00 AM', value: '2' },
                            { label: '3:00 AM', value: '3' },
