@@ -6,11 +6,11 @@ Template.Home_Page.helpers({
   /**
    * @returns {*} All of the Contact documents.
    */
-  contactsList() {
-    return Events.findAll();
+  eventsList() {
+    return Events.find();
   },
 });
 
 Template.Home_Page.onCreated(function onCreated() {
-  this.subscribe('Events');
+  this.subscribe(Events.getPublicationName());
 });

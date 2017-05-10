@@ -8,15 +8,33 @@
         <th>First</th>
         <th>Last</th>
         <th>Address</th>
+        <th>Address</th>
+        <th>Address</th>
+        <th>Address</th>
+        <th>Address</th>
+        <th>Address</th>
+        <th>Address</th>
+        <th>Address</th>
+        <th>Address</th>
+        <th>Address</th>
       </tr>
       </thead>
 
       <tbody>
-      {{#each contact in contactsList}}
+      {{#each event in eventsList}}
       <tr>
-        <td>{{contact.eventName}}</td>
-        <td>{{contact.createBy}}</td>
-        <td>{{contact.place}}</td>
+        <td>{{event.eventName}}</td>
+        <td>{{event.createBy}}</td>
+        <td>{{event.username}}</td>
+        <td>{{event.place}}</td>
+        <td>{{event.startDate}}</td>
+        <td>{{event.endDate}}</td>
+        <td>{{event.startTime}}</td>
+        <td>{{event.endTime}}</td>
+        <td>{{event.tastes}}</td>
+        <td>{{event.capabilities}}</td>
+        <td>{{event.goals}}</td>
+        <td>{{event.description}}</td>
       </tr>
       {{/each}}
       </tbody>
