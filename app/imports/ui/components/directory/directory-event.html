@@ -3,14 +3,28 @@
   <div class="card">
     <div class="content">
       <div class="header">
-        {{ event.eventName }}
-        {{ event.createBy }}
+        <div>
+          {{ event.eventName }}
+        </div>
       </div>
       <div class="meta">
-        From {{ event.startDate }} {{ event.startTime }} To {{ event.endDate }} {{ event.endTime }} At {{ event.place }}
+        <div>
+          By: {{ event.createBy }}
+        </div>
       </div>
       <div class="'description">
-        {{ event.description }}
+        <div>
+          From {{ event.startDate }} {{ event.startTime }}
+        </div>
+        <div>
+          To {{ event.endDate }} {{ event.endTime }}
+        </div>
+        <div>
+          Location: {{ event.place }}
+        </div>
+        <div>
+          Description: {{ event.description }}
+        </div>
       </div>
       <div style="margin-top: 10px">
         {{#each goal in event.goals}}
@@ -31,7 +45,7 @@
     </div>
     <div class="extra content">
       <div class="ui equal width center aligned grid">
-        <div class="ui basic green bottom"><a href="mailto:{{ profile.username}}@hawaii.edu"></a> Contact Us </div>
+        <a style="margin: 10px 0px 10px 0px;" class="ui big teal label" href="mailto:{{ event.username}}@hawaii.edu">Contact Us</a>
       </div>
     </div>
   </div>
