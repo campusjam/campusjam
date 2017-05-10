@@ -1,0 +1,53 @@
+<template name="Directory_Event">
+
+  <div class="card">
+    <div class="content">
+      <div class="header">
+        <div>
+          {{ event.eventName }}
+        </div>
+      </div>
+      <div class="meta">
+        <div>
+          By: {{ event.createBy }}
+        </div>
+      </div>
+      <div class="'description">
+        <div>
+          From {{ event.startDate }} {{ event.startTime }}
+        </div>
+        <div>
+          To {{ event.endDate }} {{ event.endTime }}
+        </div>
+        <div>
+          Location: {{ event.place }}
+        </div>
+        <div>
+          Description: {{ event.description }}
+        </div>
+      </div>
+      <div style="margin-top: 10px">
+        {{#each goal in event.goals}}
+          <a style="margin-bottom: 2px" class="ui orange tag small label">{{goal}}</a>
+        {{/each}}
+      </div>
+      <div style="margin-top: 10px">
+        {{#each capability in event.capabilities}}
+          <a style="margin-bottom: 2px" class="ui blue tag small label">{{capability}}</a>
+        {{/each}}
+      </div>
+      <div style="margin-top: 10px">
+        {{#each taste in event.tastes}}
+          <a style="margin-bottom: 2px" class="ui pink tag small label">{{taste}}</a>
+        {{/each}}
+      </div>
+
+    </div>
+    <div class="extra content">
+      <div class="ui equal width center aligned grid">
+        <a style="margin: 10px 0px 10px 0px;" class="ui big teal label" href="mailto:{{ event.username}}@hawaii.edu">Contact Us</a>
+      </div>
+    </div>
+  </div>
+
+</template>
