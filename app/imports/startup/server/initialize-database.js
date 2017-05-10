@@ -1,5 +1,4 @@
 import { Meteor } from 'meteor/meteor';
-import { Profiles } from '/imports/api/profile/ProfileCollection';
 import { Goals } from '/imports/api/goal/GoalCollection';
 import { Capabilities } from '/imports/api/capability/CapabilityCollection';
 import { Tastes } from '/imports/api/taste/TasteCollection';
@@ -31,7 +30,7 @@ function restoreCollection(collection, restoreJSON) {
 
 Meteor.startup(() => {
   /** Only initialize database if it's empty. */
-  const collectionList = [Goals, Capabilities, Tastes, Profiles];
+  const collectionList = [Goals, Capabilities, Tastes];
   const totalDocuments = _.reduce(collectionList, function reducer(memo, collection) {
     return memo + collection.count();
   }, 0);
