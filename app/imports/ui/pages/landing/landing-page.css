@@ -24,13 +24,17 @@
 
 
 .landing-section-1-welcome {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Yellowtail', cursive;
   font-weight: 900;
   font-size: 72px;
 }
 
 .landing-section-header {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Yellowtail', cursive;
   font-weight: 900;
   font-size: 36px;
+}
+
+body h3{
+  font-family: 'Yellowtail', cursive;
 }
