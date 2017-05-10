@@ -2,6 +2,26 @@
   {{#If_Logged_In}}
   <div class="ui grid container">
 
+    <table style="margin-top: 20px" class="ui celled table">
+      <thead>
+      <tr>
+        <th>First</th>
+        <th>Last</th>
+        <th>Address</th>
+      </tr>
+      </thead>
+
+      <tbody>
+      {{#each contact in contactsList}}
+      <tr>
+        <td>{{contact.eventName}}</td>
+        <td>{{contact.createBy}}</td>
+        <td>{{contact.place}}</td>
+      </tr>
+      {{/each}}
+      </tbody>
+    </table>
+
     <div class="six wide column">
       <h1 style="color: #E0EFEA">My Profile</h1>
       <div class="ui card">
