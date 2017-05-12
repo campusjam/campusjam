@@ -5,16 +5,16 @@ import { Capabilities } from '/imports/api/capability/CapabilityCollection';
 import { Tastes } from '/imports/api/taste/TasteCollection';
 import { check } from 'meteor/check';
 
-/** @module Profile */
+/** @module Events */
 
 /**
- * Profiles provide portfolio data for a user.
+ * Events provide event data.
  * @extends module:Base~BaseCollection
  */
 class EventCollection extends BaseCollection {
 
   /**
-   * Creates the Profile collection.
+   * Creates the Events collection.
    */
   constructor() {
     super('Event', new SimpleSchema({
@@ -34,25 +34,24 @@ class EventCollection extends BaseCollection {
   }
 
   /**
-   * Defines a new Profile.
+   * Defines a new Event.
    * @example
-   * Profiles.define({ firstName: 'Philip',
-   *                   lastName: 'Johnson',
+   * Events.define({ eventName: 'UHM Concert Night',
+   *                   createBy: 'Johnson',
    *                   username: 'johnson',
-   *                   bio: 'I have been a professor of computer science at UH since 1990.',
-   *                   interests: ['Application Development', 'Software Engineering', 'Databases'],
-   *                   capabilities: ['Application Development', 'Software Engineering', 'Databases'],
-   *                   title: 'Professor of Information and Computer Sciences',
-   *                   picture: 'http://philipmjohnson.org/headshot.jpg',
-   *                   github: 'https://github.com/philipmjohnson',
-   *                   facebook: 'https://facebook.com/philipmjohnson',
-   *                   instagram: 'https://instagram.com/philipmjohnson' });
+   *                   place: 'Kennedy Theatre.',
+   *                   tastes: ['Pop', 'Rock'],
+   *                   capabilities: ['Piano', 'Guitar'],
+   *                   goals: ['band'],
+   *                   startDate: '07/22/2017',
+   *                   endDate: '07/22/2017',
+   *                   startTime: '12:00 AM',
+   *                   endTime: '2:00 AM',
+   *                   description: 'BYOB' });
    * @param { Object } description Object with required key username.
-   * Remaining keys are optional.
+   * 
    * Username must be unique for all users. It should be the UH email account.
-   * Interests is an array of defined interest names.
-   * @throws { Meteor.Error } If a user with the supplied username already exists, or
-   * if one or more interests are not defined, or if github, facebook, and instagram are not URLs.
+   * tastes, capabilities, goals are array of defined tastes, capabilities, goals names.
    * @returns The newly created docID.
    */
   define({ eventName = '', createBy = '', place = '', tastes, capabilities, goals, description = '',
@@ -61,7 +60,7 @@ class EventCollection extends BaseCollection {
     const checkPattern = { eventName: String, createBy: String, place: String, description: String };
     check({ eventName, createBy, place, description }, checkPattern);
 
-    // Throw an error if any of the passed Interest names are not defined.
+    // Throw an error if any of the passed names are not defined.
     Tastes.assertNames(tastes);
     Capabilities.assertNames(capabilities);
     Goals.assertNames(goals);
@@ -70,8 +69,8 @@ class EventCollection extends BaseCollection {
   }
 
   /**
-   * Returns an object representing the Profile docID in a format acceptable to define().
-   * @param docID The docID of a Profile.
+   * Returns an object representing the Event docID in a format acceptable to define().
+   * @param docID The docID of a Event.
    * @returns { Object } An object representing the definition of docID.
    */
   dumpOne(docID) {
