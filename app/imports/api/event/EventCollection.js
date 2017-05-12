@@ -49,7 +49,6 @@ class EventCollection extends BaseCollection {
    *                   endTime: '2:00 AM',
    *                   description: 'BYOB' });
    * @param { Object } description Object with required key username.
-   * 
    * Username must be unique for all users. It should be the UH email account.
    * tastes, capabilities, goals are array of defined tastes, capabilities, goals names.
    * @returns The newly created docID.
